@@ -1,34 +1,54 @@
-[
-  {
-    "title": "MacBook Pro (16-inch, 2021)",
-    "link": "https://www.apple.com/macbook-pro-14-and-16/"
-  },
-  {
-    "title": "Studio Display",
-    "link": "https://www.apple.com/studio-display/"
-  },
-  {
-    "title": "Magic Keyboard",
-    "link": "https://www.apple.com/shop/product/MK2A3LL/A/magic-keyboard-us-english"
-  },
-  {
-    "title": "Magic Trackpad",
-    "link": "https://www.apple.com/shop/product/MMMP3AM/A/magic-trackpad-black-multi-touch-surface?fnode=4a26434232953952f2ce8972d0f9981bb1c54cec3202872dfdc8e548e838f2832314d01a55bb50f52ad5bcfef86fd085bff2f6705cd672551e2ee2e6bba664df94af989ad930288893c132a9ac41775a515a4fca6f8ff056bf2404397bf82cfd"
-  },
-  {
-    "title": "iPad Mini (6th gen)",
-    "link": "https://www.apple.com/ipad-mini/"
-  },
-  {
-    "title": "Apple Pencil",
-    "link": "https://www.apple.com/apple-pencil/"
-  },
-  {
-    "title": "iPhone 12 Pro Max",
-    "link": "https://www.apple.com/iphone-12/"
-  },
-  {
-    "title": "AirdPods Pro",
-    "link": "https://www.apple.com/airpods-pro/"
-  }
-]
+{
+  "professional": [
+    {
+      "title": "MacBook Pro M3 Max (16-inch, 2023)",
+      "link": "https://www.apple.com/macbook-pro/"
+    },
+    {
+      "title": "Studio Display",
+      "link": "https://www.apple.com/studio-display/"
+    },
+    {
+      "title": "MX Mechanical Mini Keyboard",
+      "link": "https://www.logitech.com/shop/p/mx-mechanical-mini"
+    },
+    {
+      "title": "MX Master 3 Mouse",
+      "link": "https://www.logitech.com/shop/p/mx-master-3s"
+    },
+    {
+      "title": "iPad Mini (6th gen)",
+      "link": "https://www.apple.com/ipad-mini/"
+    },
+    {
+      "title": "Apple Pencil",
+      "link": "https://www.apple.com/apple-pencil/"
+    },
+    {
+      "title": "iPhone 16 Pro Max",
+      "link": "https://en.wikipedia.org/wiki/IPhone_16_Pro"
+    },
+    {
+      "title": "AirdPods Pro 2",
+      "link": "https://www.apple.com/airpods-pro/"
+    },
+    {
+      "title": "AirPods Max",
+      "link": "https://www.apple.com/airpods-max/"
+    }
+  ],
+  "entertainment": [
+    {
+      "title": "Gigabyte MO27Q2 Monitor",
+      "link": "https://www.gigabyte.com/Monitor/MO27Q2"
+    },
+    {
+      "title": "G502 X LIGHTSPEED Mouse",
+      "link": "https://www.logitechg.com/shop/p/g502-x-wireless-lightforce"
+    },
+    {
+      "title": "Arctis Nova 5 Wireless",
+      "link": "https://steelseries.com/gaming-headsets/arctis-nova-5"
+    }
+  ]
+}

@@ -67,14 +67,31 @@ module.exports = function (eleventyConfig) {
         return `${new Date().getFullYear()}`;
     });
 
-    // Experience short-code
-    eleventyConfig.addShortcode('experience', function() {
-        let currentYear = new Date().getFullYear(),
-            startingYear = global.starting,
-            experienceYear = currentYear - startingYear;
+    // Experience (years-only) helper and shortcodes
+    const getStartDate = () => {
+        if (global.startingDate) {
+            return DateTime.fromISO(global.startingDate).startOf('day');
+        } else if (global.starting) {
+            const startYear = global.starting;
+            const startMonth = global.startingMonth || 1;
+            return DateTime.fromObject({ year: startYear, month: startMonth, day: 1 });
+        }
 
-        return `${experienceYear}`;
-    });
+        return DateTime.fromObject({ year: DateTime.now().year, month: 1, day: 1 });
+    };
+
+    const formatYearsOnly = () => {
+        const start = getStartDate();
+        const now = DateTime.now();
+        const diff = now.diff(start, ['years']).toObject();
+        const years = Math.floor(diff.years || 0);
+
+        return `${years} ${years === 1 ? 'year' : 'years'}`;
+    };
+
+    eleventyConfig.addShortcode('experienceYears', formatYearsOnly);
+    // Backwards-compatible alias (keeps templates working if they use `experience`)
+    eleventyConfig.addShortcode('experience', formatYearsOnly);
 
     // Post video
     // Usage: {% video "my-video" "My caption…" %}

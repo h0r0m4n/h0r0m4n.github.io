@@ -4,8 +4,12 @@
     "link": "https://figma.com"
   },
   {
-    "title": "ChatGPT",
-    "link": "https://openai.com/chatgpt"
+    "title": "Gemini",
+    "link": "https://gemini.google.com"
+  },
+  {
+    "title": "Claude",
+    "link": "https://claude.ai"
   },
   {
     "title": "Notion",
@@ -16,15 +20,7 @@
     "link": "https://slack.com"
   },
   {
-    "title": "Zoom",
-    "link": "https://zoom.us"
-  },
-  {
-    "title": "Loom",
-    "link": "https://www.loom.com"
-  },
-  {
-    "title": "Visual Studio Code",
-    "link": "https://code.visualstudio.com"
+    "title": "Cursor",
+    "link": "https://cursor.com"
   }
 ]
