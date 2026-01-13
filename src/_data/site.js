@@ -9,13 +9,13 @@ module.exports = {
     author: 'Roman Horokhovatskyy',
     location: 'Dublin, Ireland',
     nickname: 'h0r0m4n',
-    mail: 'me@horoman.com',
+    mail: 'roman.horokhovatskyy@gmail.com',
     // ISO starting date (year-month-day). Use a single canonical value.
     startingDate,
     // Convenience: starting year derived from `startingDate`
     startingYear,
     password: 376301,
-    version: '6.9',
+    version: '7.0',
     environment: process.env.ELEVENTY_ENV,
     url: process.env.ELEVENTY_ENV === 'development' ? 'http://localhost:8080' : 'https://horoman.com'
 };
