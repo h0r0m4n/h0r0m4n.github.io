@@ -1,3 +1,5 @@
+@use "../vars"
+
 .intro
     margin-top: var(--size-xl)
 
@@ -6,7 +8,7 @@
         position: relative
         margin-block: 0
         left: calc(var(--size-s) * -1)
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             left: calc(var(--size-l) * -1 - 0.125rem)
 
         svg
@@ -15,7 +17,7 @@
             width: 360px
             height: 360px
             animation: rotate 240s linear infinite
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 width: 600px
                 height: 600px
 
@@ -23,7 +25,7 @@
             img
                 width: 96px
                 height: 143px
-                @media (width >= $media-small)
+                @media (width >= vars.$media-small)
                     padding: 0.5em
                     width: 154px
                     height: 230px
@@ -41,7 +43,7 @@
         font-size: 0.825em
         line-height: 0
         margin-bottom: var(--size-m)
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             font-size: 1em
         svg
             fill: var(--color-secondary)
@@ -59,7 +61,7 @@
             padding-left: 0
             list-style: none
             flex-direction: column
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 column-gap: var(--size-m)
                 flex-direction: row
                 flex-wrap: wrap

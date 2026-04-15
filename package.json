@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist .cache",
-    "watch:sass": "sass --silence-deprecation=import --watch --no-source-map src/sass:dist/css/",
+    "watch:sass": "sass --watch --no-source-map src/sass:dist/css/",
     "watch:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "build:sass": "sass --silence-deprecation=import --style=compressed --no-source-map src/sass:dist/css/",
+    "build:sass": "sass --style=compressed --no-source-map src/sass:dist/css/",
     "build:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:* --sequential"
