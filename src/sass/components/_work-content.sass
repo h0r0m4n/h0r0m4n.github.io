@@ -1,3 +1,4 @@
+@use "../mixins"
 @use "../vars"
 
 #work-content
@@ -9,7 +10,7 @@
 
     .stats
         line-height: var(--type-height-2)
-        @media (width >= vars.$media-small)
+        @include mixins.mq-small
             display: flex
 
         p
@@ -17,7 +18,7 @@
             background-color: var(--color-neutral-4)
             border-radius: var(--radius-2)
 
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 flex: auto
                 margin-right: var(--size-s)
                 &:last-of-type

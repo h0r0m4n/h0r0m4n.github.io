@@ -1,13 +1,14 @@
+@use "../mixins"
 @use "../vars"
 
 .about
     &__skills
-        @media (width >= vars.$media-small)
+        @include mixins.mq-small
             display: flex
             flex-direction: row
             gap: var(--size-l)
         &__group
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 flex: 1
             ul
                 padding-inline-start: var(--size-m)
@@ -33,9 +34,9 @@
             align-items: baseline
             padding: var(--size-s)
             text-align: center
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 padding: var(--size-m)
-            @media (width >= vars.$media-large)
+            @include mixins.mq-large
                 padding: var(--size-l)
 
             li
@@ -77,7 +78,7 @@
             fill: var(--color-primary)
             height: 2rem
 
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 height: 2.5rem
 
     &__hardware

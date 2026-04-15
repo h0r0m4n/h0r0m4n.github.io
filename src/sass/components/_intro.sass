@@ -1,4 +1,5 @@
 @use "../vars"
+@use "../mixins"
 
 .intro
     margin-top: var(--size-xl)
@@ -8,27 +9,25 @@
         position: relative
         margin-block: 0
         left: calc(var(--size-s) * -1)
-        @media (width >= vars.$media-small)
+        @include mixins.mq-small
             left: calc(var(--size-l) * -1 - 0.125rem)
 
         svg
             fill: var(--color-tertiary)
             user-select: none
-            width: 360px
-            height: 360px
+            width: min(360px, 100vw)
+            height: auto
             animation: rotate 240s linear infinite
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 width: 600px
-                height: 600px
 
-        picture
-            img
-                width: 96px
-                height: 143px
-                @media (width >= vars.$media-small)
-                    padding: 0.5em
-                    width: 154px
-                    height: 230px
+        img
+            width: 96px
+            height: 143px
+            @include mixins.mq-small
+                padding: 0.5em
+                width: 154px
+                height: 230px
 
         &__ascii
             position: absolute
@@ -43,15 +42,15 @@
         font-size: 0.825em
         line-height: 0
         margin-bottom: var(--size-m)
-        @media (width >= vars.$media-small)
+        @include mixins.mq-small
             font-size: 1em
         svg
             fill: var(--color-secondary)
             width: 75%
+            max-width: 400px
             filter: drop-shadow(var(--shadow-1))
 
     &__nav
-        font-family: var(--type-family-2)
         font-family: var(--type-family-1b)
         margin-bottom: var(--size-xl)
         ul
@@ -61,19 +60,20 @@
             padding-left: 0
             list-style: none
             flex-direction: column
-            @media (width >= vars.$media-small)
+            @include mixins.mq-small
                 column-gap: var(--size-m)
                 flex-direction: row
                 flex-wrap: wrap
-            a
-                &:hover,
-                &:focus
-                    color: var(--color-tertiary)
-                &.active
-                    color: var(--color-secondary)
-                    border-bottom: 1px solid currentColor
-            span
-                font-family: var(--type-family-1a)
+
+    &__nav-link
+        &:hover,
+        &:focus
+            color: var(--color-tertiary)
+        &--active
+            color: var(--color-secondary)
+            border-bottom: 1px solid currentColor
+        span
+            font-family: var(--type-family-1a)
 
     &__emoji
         display: inline-block
