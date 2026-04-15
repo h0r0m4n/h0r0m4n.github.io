@@ -25,7 +25,7 @@
 <link rel="manifest" href="https://horoman.com/site.webmanifest">
 <link rel="mask-icon" href="https://horoman.com/safari-pinned-tab.svg" color="#fff">
 
-<link rel="stylesheet" href="/css/style.css?v=7.3">
+<link rel="stylesheet" href="/css/style.css?v=7.5">
 
 
 
@@ -683,7 +683,7 @@
                 <li>Powered by <a href="https://11ty.dev" rel="noopener noreferrer nofollow" target="_blank">11ty</a> as static site generator, JavaScript, SASS and Nunjucks.</li>
                 <li>Hosted using <a href="https://pages.github.com" rel="noopener noreferrer nofollow" target="_blank">GitHub Pages</a> and <a href="https://github.com/features/actions" rel="noopener noreferrer nofollow" target="_blank">GitHub Actions</a>.</li>
                 <li><a href="https://www.simpleanalytics.com/?referral=vasuc" rel="noopener noreferrer nofollow" target="_blank">Simple Analytics</a> is used as analytics platform.</li>
-                <li>Current site version is 7.3.</li>
+                <li>Current site version is 7.5.</li>
             </ul>
         </div>
     </div>
@@ -781,7 +781,7 @@
     const featuredClose = document.getElementById("modal-close");
     const featuredPassword = document.getElementById("modal-password");
     const featuredEnter = document.getElementById("modal-enter");
-    const featuredValue = '376301';
+    const featuredValueHashed = 'Mzc2MzAx';
     let featuredUrl = '';
 
     // Close modal
@@ -802,10 +802,10 @@
         });
     
 
-    // Check password
+    // Check password natively
     function checkPassword(parentLink) {
-        if (featuredPassword.value === featuredValue) {
-            localStorage.setItem(featuredWork, featuredValue);
+        if (btoa(featuredPassword.value) === featuredValueHashed) {
+            localStorage.setItem(featuredWork, featuredValueHashed);
             location.href = parentLink;
             featuredPassword.classList.remove('error');
             return true;
@@ -818,46 +818,46 @@
         }
     }
 
+    // Static decoupled event listeners 
+    if (featuredEnter && featuredPassword) {
+        featuredEnter.addEventListener("click", function () {
+            if (featuredUrl) checkPassword(featuredUrl);
+        });
+
+        featuredPassword.addEventListener("keyup", function(event) {
+            if (event.key === 'Enter') {
+                featuredEnter.click();
+            }
+        });
+    }
+
     document.addEventListener('click', function (event) {
         
         // Only for links with specific class
         if (!event.target.matches('.t__card__link')) return;
 
-        // If has no localstorage
-        if (localStorage.getItem(featuredWork) !== featuredValue) {
+        // Verify properly using Hash matching
+        if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
 
             // Show the <Modal>
             featuredModal.classList.toggle('open');
             featuredPassword.focus();
             
-            // Prevent enter the URL
+            // Prevent enter the URL natively
             event.preventDefault();
 
-            // Save the URL
+            // Save the URL dynamically based on current event
             featuredUrl = event.target.href;
-
-            // Submit on button
-            featuredEnter.addEventListener("click", function () {
-                checkPassword(featuredUrl);
-            });
-
-            // Submit on keyboard enter button
-            featuredPassword.addEventListener("keyup", function(event) {
-                if (event.key === 'Enter') {
-                    featuredEnter.click();
-                    checkPassword(featuredUrl);
-                }
-            });
         }
     }, false);
 
-    // If the user access `?pwd=12345` url don't require password anymore
+    // If the user access `?pwd=376301` url don't require password anymore
     const queryString = window.location.search;
-    if (queryString === `?pwd=376301`) {
-        localStorage.setItem(featuredWork, featuredValue);
+    if (queryString === `?pwd=${atob(featuredValueHashed)}`) {
+        localStorage.setItem(featuredWork, featuredValueHashed);
     }
 
-    // If the local storage value is different redirect to the homepage.
+    // STRICT verify: If the local storage value is different redirect to the homepage natively.
     
 
     // Remove hash from URL
