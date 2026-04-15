@@ -22,7 +22,7 @@
     const featuredClose = document.getElementById("modal-close");
     const featuredPassword = document.getElementById("modal-password");
     const featuredEnter = document.getElementById("modal-enter");
-    const featuredValue = '{{ site.password }}';
+    const featuredValueHashed = '{{ site.password | base64 }}';
     let featuredUrl = '';
 
     // Close modal
@@ -43,10 +43,10 @@
         });
     {% endif %}
 
-    // Check password
+    // Check password natively
     function checkPassword(parentLink) {
-        if (featuredPassword.value === featuredValue) {
-            localStorage.setItem(featuredWork, featuredValue);
+        if (btoa(featuredPassword.value) === featuredValueHashed) {
+            localStorage.setItem(featuredWork, featuredValueHashed);
             location.href = parentLink;
             featuredPassword.classList.remove('error');
             return true;
@@ -59,48 +59,48 @@
         }
     }
 
+    // Static decoupled event listeners 
+    if (featuredEnter && featuredPassword) {
+        featuredEnter.addEventListener("click", function () {
+            if (featuredUrl) checkPassword(featuredUrl);
+        });
+
+        featuredPassword.addEventListener("keyup", function(event) {
+            if (event.key === 'Enter') {
+                featuredEnter.click();
+            }
+        });
+    }
+
     document.addEventListener('click', function (event) {
         
         // Only for links with specific class
         if (!event.target.matches('.t__card__link')) return;
 
-        // If has no localstorage
-        if (localStorage.getItem(featuredWork) !== featuredValue) {
+        // Verify properly using Hash matching
+        if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
 
             // Show the <Modal>
             featuredModal.classList.toggle('open');
             featuredPassword.focus();
             
-            // Prevent enter the URL
+            // Prevent enter the URL natively
             event.preventDefault();
 
-            // Save the URL
+            // Save the URL dynamically based on current event
             featuredUrl = event.target.href;
-
-            // Submit on button
-            featuredEnter.addEventListener("click", function () {
-                checkPassword(featuredUrl);
-            });
-
-            // Submit on keyboard enter button
-            featuredPassword.addEventListener("keyup", function(event) {
-                if (event.key === 'Enter') {
-                    featuredEnter.click();
-                    checkPassword(featuredUrl);
-                }
-            });
         }
     }, false);
 
-    // If the user access `?pwd=12345` url don't require password anymore
+    // If the user access `?pwd=376301` url don't require password anymore
     const queryString = window.location.search;
-    if (queryString === `?pwd={{ site.password }}`) {
-        localStorage.setItem(featuredWork, featuredValue);
+    if (queryString === `?pwd=${atob(featuredValueHashed)}`) {
+        localStorage.setItem(featuredWork, featuredValueHashed);
     }
 
-    // If the local storage value is different redirect to the homepage.
+    // STRICT verify: If the local storage value is different redirect to the homepage natively.
     {% if layout == 'layouts/work' %}
-        if (!localStorage.hasOwnProperty(featuredWork)) {
+        if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
             location.href = '{{ site.url }}';
         }
     {% endif %}
