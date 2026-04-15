@@ -1,5 +1,34 @@
-// Usage: @include delay(3, 500ms)
+@use "vars"
+
+// Base Animations
+// Usage: @include mixins.delay(3, 500ms)
 @mixin delay($number, $value)
     @for $i from 1 to ($number + 1)
         &:nth-child(#{$i})
             animation-delay: (#{$i*$value})
+
+// Media Queries
+// Usage: @include mixins.mq-small
+@mixin mq-small
+    @media (width >= vars.$media-small)
+        @content
+
+@mixin mq-medium
+    @media (width >= vars.$media-medium)
+        @content
+
+@mixin mq-large
+    @media (width >= vars.$media-large)
+        @content
+
+@mixin mq-huge
+    @media (width >= vars.$media-huge)
+        @content
+
+@mixin mq-small-down
+    @media (width < vars.$media-small)
+        @content
+
+@mixin mq-medium-down
+    @media (width < vars.$media-medium)
+        @content

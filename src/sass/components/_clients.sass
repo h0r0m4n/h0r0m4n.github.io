@@ -1,10 +1,11 @@
+@use "../mixins"
 @use "../vars"
 
 .clients
     ol
         gap: var(--size-s) var(--size-xl)
         margin-bottom: 0
-        @media (width < vars.$media-small)
+        @include mixins.mq-small-down
             gap: 0 var(--size-l)
             padding: var(--size-s)
             margin: calc(var(--size-s) * -1)

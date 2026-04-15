@@ -1,10 +1,11 @@
+@use "../mixins"
 @use "../vars"
 
 .contact
     padding-top: var(--size-l)
     padding-bottom: var(--size-l)
     background-color: var(--color-neutral-4)
-    @media (width >= vars.$media-small)
+    @include mixins.mq-small
         padding-top: var(--size-xl)
         padding-bottom: var(--size-xl)
 

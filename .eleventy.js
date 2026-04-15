@@ -38,11 +38,14 @@ module.exports = function (eleventyConfig) {
         return array.slice(0, n);
     });
 
-    // Exclude items with permalink set to false
     eleventyConfig.addFilter('permalinkNotFalse', (items) => {
         return items.filter(item => {
             return (item.data.permalink !== false)
         })
+    });
+
+    eleventyConfig.addFilter('base64', (str) => {
+        return Buffer.from(str.toString()).toString('base64');
     });
 
     eleventyConfig.addFilter('year', dateObj => {

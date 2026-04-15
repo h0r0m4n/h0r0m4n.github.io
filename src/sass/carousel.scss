@@ -644,7 +644,7 @@
 }
 
 .f-carousel__nav {
-    @media (width < vars.$media-small) {
+    @include mixins.mq-small-down {
         display: none;
     }
 }

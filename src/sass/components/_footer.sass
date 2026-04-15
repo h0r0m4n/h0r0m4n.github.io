@@ -1,12 +1,13 @@
+@use "../mixins"
 @use "../vars"
 
 .footer
     padding-top: var(--size-l)
     padding-bottom: var(--size-l)
-    @media (width >= vars.$media-small)
+    @include mixins.mq-small
         padding-top: var(--size-xl)
         padding-bottom: var(--size-xl)
-    @media (width >= vars.$media-large)
+    @include mixins.mq-large
         padding-top: var(--size-xxl)
         padding-bottom: var(--size-xxl)
 
@@ -27,6 +28,6 @@
                 fill: var(--color-background)
                 height: var(--size-s)
                 width: var(--size-s)
-                @media (width >= vars.$media-large)
+                @include mixins.mq-large
                     height: var(--size-m)
                     width: var(--size-m)
