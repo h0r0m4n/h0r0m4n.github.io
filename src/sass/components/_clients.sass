@@ -1,8 +1,10 @@
+@use "../vars"
+
 .clients
     ol
         gap: var(--size-s) var(--size-xl)
         margin-bottom: 0
-        @media (width < $media-small)
+        @media (width < vars.$media-small)
             gap: 0 var(--size-l)
             padding: var(--size-s)
             margin: calc(var(--size-s) * -1)

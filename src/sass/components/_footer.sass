@@ -1,10 +1,12 @@
+@use "../vars"
+
 .footer
     padding-top: var(--size-l)
     padding-bottom: var(--size-l)
-    @media (width >= $media-small)
+    @media (width >= vars.$media-small)
         padding-top: var(--size-xl)
         padding-bottom: var(--size-xl)
-    @media (width >= $media-large)
+    @media (width >= vars.$media-large)
         padding-top: var(--size-xxl)
         padding-bottom: var(--size-xxl)
 
@@ -25,6 +27,6 @@
                 fill: var(--color-background)
                 height: var(--size-s)
                 width: var(--size-s)
-                @media (width >= $media-large)
+                @media (width >= vars.$media-large)
                     height: var(--size-m)
                     width: var(--size-m)

@@ -1,5 +1,5 @@
-@import "vars";
-@import "mixins";
+@use "vars";
+@use "mixins";
 
 :root {
     --f-spinner-width: 36px;
@@ -644,7 +644,7 @@
 }
 
 .f-carousel__nav {
-    @media (width < $media-small) {
+    @media (width < vars.$media-small) {
         display: none;
     }
 }

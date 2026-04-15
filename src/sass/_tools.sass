@@ -1,3 +1,5 @@
+@use "vars"
+
 .t
 
     &__vh
@@ -30,7 +32,7 @@
                 -webkit-filter: brightness(110%)
                 filter: brightness(110%)
                 transform: scale(1.05)
-                @media (width >= $media-large)
+                @media (width >= vars.$media-large)
                     transform: scale(1.1)
                 @media (prefers-color-scheme: dark)
                     -webkit-filter: brightness(112%)
@@ -45,33 +47,33 @@
         margin-inline: auto
         padding-inline: var(--size-s)
         box-sizing: border-box
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             padding-inline: var(--size-m)
-        @media (width >= $media-large)
+        @media (width >= vars.$media-large)
             padding-inline: var(--size-l)
 
     &__section + *
         clear: both
         margin-top: var(--size-xl)
-        @media (width >= $media-large)
+        @media (width >= vars.$media-large)
             margin-top: var(--size-xxl)
 
     &__grid
         list-style: none
         margin: 0
         &--works
-            @media (width < $media-small)
+            @media (width < vars.$media-small)
                 padding-inline: 1em
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 display: grid
                 grid-template-columns: repeat(2, 1fr)
                 grid-gap: var(--size-l)
                 padding-inline: var(--size-l)
-            @media (width >= $media-large)
+            @media (width >= vars.$media-large)
                 grid-template-columns: repeat(4, 1fr)
         &--pagination
             padding-left: 0
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 display: grid
                 grid-template-columns: repeat(2, 1fr)
                 grid-gap: var(--size-l)
@@ -80,14 +82,14 @@
             display: flex
             flex-direction: column
             grid-gap: var(--size-s)
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 grid-gap: var(--size-m)
-            @media (width >= $media-medium)
+            @media (width >= vars.$media-medium)
                 grid-gap: var(--size-l)
-            @media (width >= $media-large)
+            @media (width >= vars.$media-large)
                 grid-gap: var(--size-xl)
         &__item
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 display: flex
 
     &__card
@@ -96,7 +98,7 @@
         flex-direction: column
         width: 100%
         .t__grid--works &
-            @media (width < $media-small)
+            @media (width < vars.$media-small)
                 margin-bottom: var(--size-m)
         &--interactive
             &:hover
@@ -110,7 +112,7 @@
             border: 1px solid var(--color-neutral-4)
         &__image
             order: -1
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 display: flex
                 flex-direction: column
                 justify-content: end
@@ -129,7 +131,7 @@
             order: -1
             margin-block: 0
             display: flex
-            @media (width >= $media-medium)
+            @media (width >= vars.$media-medium)
                 padding-inline: var(--size-s)
                 position: relative
                 left: 50%
@@ -141,13 +143,13 @@
             &__scroll
                 display: flex
                 gap: var(--size-s)
-                @media (width < $media-medium)
+                @media (width < vars.$media-medium)
                     padding-inline: var(--size-s)
                     overflow-y: hidden
                     overflow-x: scroll
             .t__card__image
                 img
-                    @media (width < $media-medium)
+                    @media (width < vars.$media-medium)
                         min-width: 300px
             a
                 img
@@ -161,7 +163,7 @@
             display: flex
             flex-direction: column
             padding: var(--size-s)
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 padding: var(--size-m)
         &__title
             margin-top: 0

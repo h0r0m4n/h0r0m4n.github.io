@@ -1,3 +1,5 @@
+@use "../vars"
+
 #work-content
     h3, h4
         text-transform: none
@@ -7,7 +9,7 @@
 
     .stats
         line-height: var(--type-height-2)
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             display: flex
 
         p
@@ -15,7 +17,7 @@
             background-color: var(--color-neutral-4)
             border-radius: var(--radius-2)
 
-            @media (width >= $media-small)
+            @media (width >= vars.$media-small)
                 flex: auto
                 margin-right: var(--size-s)
                 &:last-of-type

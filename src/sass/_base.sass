@@ -1,3 +1,5 @@
+@use "vars"
+
 html, body
     -webkit-tap-highlight-color: rgba(0,0,0,0)
 
@@ -13,17 +15,17 @@ html
     text-rendering: optimizeLegibility
     background-color: var(--color-background)
     &::-webkit-scrollbar
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             width: 0.5rem
 
     &::-webkit-scrollbar-thumb
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             background: var(--color-secondary)
 
     &::-webkit-scrollbar-track
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             background: var(--color-neutral-4)
-    @media (width >= $media-small)
+    @media (width >= vars.$media-small)
         scroll-padding-top: var(--size-xl)
 
 body
@@ -37,11 +39,11 @@ body
     color: var(--color-primary)
     word-wrap: break-word
     overflow-wrap: break-word
-    @media (width >= $media-small)
+    @media (width >= vars.$media-small)
         font-size: 1.125em
-    @media (width >= $media-medium)
+    @media (width >= vars.$media-medium)
         font-size: 1.25em
-    @media (width >= $media-large)
+    @media (width >= vars.$media-large)
         font-size: 1.375em
 
 main
@@ -159,25 +161,25 @@ figure
     &.large
         margin-left: calc(var(--size-s) * -1)
         margin-right: calc(var(--size-s) * -1)
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             margin-left: calc(var(--size-m) * -1)
             margin-right: calc(var(--size-m) * -1)
-        @media (width >= $media-medium)
+        @media (width >= vars.$media-medium)
             margin-left: -9rem
             margin-right: -9rem
-        @media (width >= $media-large)
+        @media (width >= vars.$media-large)
             margin-left: -17rem
             margin-right: -17rem
     &.full
         margin-left: calc(var(--size-s) * -1)
         margin-right: calc(var(--size-s) * -1)
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             margin-left: calc(var(--size-m) * -1)
             margin-right: calc(var(--size-m) * -1)
-        @media (width >= $media-medium)
+        @media (width >= vars.$media-medium)
             margin-left: -9rem
             margin-right: -9rem
-        @media (width >= $media-large)
+        @media (width >= vars.$media-large)
             position: relative
             left: 50%
             right: 50%
@@ -189,7 +191,7 @@ figure
 
     img, video
         width: 100%
-        @media (width >= $media-small)
+        @media (width >= vars.$media-small)
             border-radius: var(--radius-1)
 
     figcaption
