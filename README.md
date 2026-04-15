@@ -4,7 +4,8 @@
 
 1. Install: `npm install`
 2. Run: `npm start`, then open: <http://localhost:8080/>
-3. Build `npm run build`
+3. Build: `npm run build`
+4. Clean: `npm run clean` (Clears the `.cache` and `dist` directories if you encounter rendering issues and want a completely fresh build)
 
 ## Copyright & Licensing
 

@@ -106,26 +106,27 @@ module.exports = function (eleventyConfig) {
         `;
     });
 
-    // Work image
-    // Usage: {% image "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
-    eleventyConfig.addShortcode('image', async (src, alt, caption) => {
-
+    async function getPictureMarkup(src, alt, widths, urlPath, outputDir, decoding = 'async') {
+        const resetColor = "\x1b[0m";
+        const fgCyan = "\x1b[36m";
+        console.log(`[eleventy-img]${fgCyan} Processing ${src}...${resetColor}`);
+        
         let stats = await Image(src, {
-            widths: [960, 1280, 1920, 2560],
+            widths,
             formats: ["jpeg", "webp", "avif"],
             sharpOptions: { quality: 90 },
             filenameFormat: function (id, src, width, format, options) {
                 const extension = path.extname(src);
                 const name = path.basename(src, extension);
-
                 return `${name}-${width}w.${format}`;
             },
-            urlPath: "/static/work",
-            outputDir: "./dist/static/work",
+            urlPath,
+            outputDir,
         });
-    
+
         let lowestSrc = stats["jpeg"][0];
-    
+        let largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
+
         const srcset = Object.keys(stats).reduce(
             (acc, format) => ({
                 ...acc,
@@ -136,19 +137,27 @@ module.exports = function (eleventyConfig) {
             }),
             {}
         );
-    
+
         const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
         const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-    
+
         const img = `<img
             loading="lazy"
-            decoding="async"
-            alt="${alt}"
+            decoding="${decoding}"
+            alt="${alt || ''}"
             src="${lowestSrc.url}"
             sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
             srcset="${srcset["jpeg"]}"
             width="${lowestSrc.width}"
             height="${lowestSrc.height}">`;
+
+        return { sourceAVIF, sourceWEBP, img, largestSrc };
+    }
+
+    // Work image
+    // Usage: {% image "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
+    eleventyConfig.addShortcode('image', async (src, alt, caption) => {
+        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [960, 1280, 1920, 2560], "/static/work", "./dist/static/work");
 
         return outdent`
             <figure class="large">
@@ -165,46 +174,7 @@ module.exports = function (eleventyConfig) {
     // Work image full-width
     // Usage: {% image-big "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
     eleventyConfig.addShortcode('image-big', async (src, alt, caption) => {
-
-      let stats = await Image(src, {
-          widths: [1920, 2560, 3840, 5120],
-          formats: ["jpeg", "webp", "avif"],
-          sharpOptions: { quality: 90 },
-          filenameFormat: function (id, src, width, format, options) {
-              const extension = path.extname(src);
-              const name = path.basename(src, extension);
-
-              return `${name}-${width}w.${format}`;
-          },
-          urlPath: "/static/work",
-          outputDir: "./dist/static/work",
-      });
-  
-      let lowestSrc = stats["jpeg"][0];
-  
-      const srcset = Object.keys(stats).reduce(
-          (acc, format) => ({
-              ...acc,
-              [format]: stats[format].reduce(
-                  (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-                  ""
-              ),
-          }),
-          {}
-      );
-  
-      const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-      const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-  
-      const img = `<img
-          loading="lazy"
-          decoding="async"
-          alt="${alt}"
-          src="${lowestSrc.url}"
-          sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-          srcset="${srcset["jpeg"]}"
-          width="${lowestSrc.width}"
-          height="${lowestSrc.height}">`;
+      const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [1920, 2560, 3840, 5120], "/static/work", "./dist/static/work");
 
       return outdent`
           <figure class="full">
@@ -228,44 +198,13 @@ module.exports = function (eleventyConfig) {
       for (let i = 1; i <= count; i++) {
         let imageSrc = src.replace(/-1(\.[\w\d_-]+)$/i, `-${i}$1`);
   
-        let stats = await Image(imageSrc, {
-          widths: [960, 1280, 1920, 2560],
-          formats: ["jpeg", "webp", "avif"],
-          sharpOptions: { quality: 90 },
-          filenameFormat: function (id, src, width, format, options) {
-            const extension = path.extname(src);
-            const name = path.basename(src, extension);
-            return `${name}-${width}w.${format}`;
-          },
-          urlPath: "/static/work",
-          outputDir: "./dist/static/work",
-        });
-  
-        let lowestSrc = stats["jpeg"][0];
-  
-        const srcset = Object.keys(stats).reduce(
-          (acc, format) => ({
-            ...acc,
-            [format]: stats[format].reduce(
-              (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-              ""
-            ),
-          }),
-          {}
+        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(
+          imageSrc, 
+          alt ? `${alt} - Slide ${i}` : `Slide ${i}`, 
+          [960, 1280, 1920, 2560], 
+          "/static/work", 
+          "./dist/static/work"
         );
-  
-        const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-        const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-  
-        const img = `<img
-          loading="lazy"
-          decoding="async"
-          alt="${alt ? `${alt} - Slide ${i}` : `Slide ${i}`}"
-          src="${lowestSrc.url}"
-          sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-          srcset="${srcset["jpeg"]}"
-          width="${lowestSrc.width}"
-          height="${lowestSrc.height}">`;
   
         images.push(outdent`
           <picture class="f-carousel__slide">
@@ -286,46 +225,7 @@ module.exports = function (eleventyConfig) {
     // Work thumbnail
     // Usage: {% thumbnail "static/work/file-name.jpg" "My alt…" "16:10" %}
     eleventyConfig.addNunjucksAsyncShortcode('thumbnail', async (src, alt, ratio) => {
-
-        let stats = await Image(src, {
-            widths: [960, 1280, 2560],
-            formats: ["jpeg", "webp", "avif"],
-            sharpOptions: { quality: 90 },
-            filenameFormat: function (id, src, width, format, options) {
-                const extension = path.extname(src);
-                const name = path.basename(src, extension);
-
-                return `${name}-${width}w.${format}`;
-            },
-            urlPath: "/static/work",
-            outputDir: "./dist/static/work",
-        });
-    
-        let lowestSrc = stats["jpeg"][0];
-    
-        const srcset = Object.keys(stats).reduce(
-            (acc, format) => ({
-                ...acc,
-                [format]: stats[format].reduce(
-                    (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-                    ""
-                ),
-            }),
-            {}
-        );
-
-        const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-        const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-    
-        const img = `<img
-            loading="lazy"
-            decoding="sync"
-            alt="${alt}"
-            src="${lowestSrc.url}"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-            srcset="${srcset["jpeg"]}"
-            width="${lowestSrc.width}"
-            height="${lowestSrc.height}">`;
+        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [960, 1280, 2560], "/static/work", "./dist/static/work", "sync");
 
         return outdent`
             <picture class="t__card__image t__ratio t__ratio--${ratio}">
@@ -339,45 +239,7 @@ module.exports = function (eleventyConfig) {
     // Work lightbox
     // Usage: {% lightbox "static/work/file-name.jpg" "Gallery 1" "Caption 1" "16:10" %}
     eleventyConfig.addNunjucksAsyncShortcode('lightbox', async (src, galleryName, caption, ratio) => {
-      let stats = await Image(src, {
-          widths: [960, 1280, 2560],
-          formats: ["jpeg", "webp", "avif"],
-          sharpOptions: { quality: 90 },
-          filenameFormat: function (id, src, width, format, options) {
-              const extension = path.extname(src);
-              const name = path.basename(src, extension);
-              return `${name}-${width}w.${format}`;
-          },
-          urlPath: "/static/work",
-          outputDir: "./dist/static/work",
-      });
-  
-      let largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
-      let lowestSrc = stats["jpeg"][0];
-  
-      const srcset = Object.keys(stats).reduce(
-          (acc, format) => ({
-              ...acc,
-              [format]: stats[format].reduce(
-                  (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-                  ""
-              ),
-          }),
-          {}
-      );
-  
-      const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-      const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-  
-      const img = `<img
-          loading="lazy"
-          decoding="sync"
-          alt="${caption}"
-          src="${lowestSrc.url}"
-          sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-          srcset="${srcset["jpeg"]}"
-          width="${lowestSrc.width}"
-          height="${lowestSrc.height}">`;
+      const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, caption, [960, 1280, 2560], "/static/work", "./dist/static/work", "sync");
   
       return outdent`
           <a href="${largestSrc.url}" data-fancybox="${galleryName}" data-caption="${caption}" class="t__hover t__hover--2">
@@ -393,46 +255,7 @@ module.exports = function (eleventyConfig) {
     // Book cover
     // Usage: {% book "static/file-name.jpg" "My alt…" %}
     eleventyConfig.addNunjucksAsyncShortcode('book', async (src, alt) => {
-
-        let stats = await Image(src, {
-            widths: [160, 240, 320],
-            formats: ["jpeg", "webp", "avif"],
-            sharpOptions: { quality: 90 },
-            filenameFormat: function (id, src, width, format, options) {
-                const extension = path.extname(src);
-                const name = path.basename(src, extension);
-
-                return `${name}-${width}w.${format}`;
-            },
-            urlPath: "/static/work",
-            outputDir: "./dist/static/work",
-        });
-    
-        let lowestSrc = stats["jpeg"][0];
-    
-        const srcset = Object.keys(stats).reduce(
-            (acc, format) => ({
-                ...acc,
-                [format]: stats[format].reduce(
-                    (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-                    ""
-                ),
-            }),
-            {}
-        );
-
-        const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-        const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-    
-        const img = `<img
-            loading="lazy"
-            decoding="async"
-            alt="${alt}"
-            src="${lowestSrc.url}"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-            srcset="${srcset["jpeg"]}"
-            width="${lowestSrc.width}"
-            height="${lowestSrc.height}">`;
+        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [160, 240, 320], "/static/work", "./dist/static/work");
 
         return outdent`
             <picture>
@@ -446,46 +269,7 @@ module.exports = function (eleventyConfig) {
     // Testimonial avatar
     // Usage: {% testimonial "static/file-name.jpg" "My alt…" %}
     eleventyConfig.addNunjucksAsyncShortcode('testimonial', async (src, alt) => {
-
-        let stats = await Image(src, {
-            widths: [64, 96, 128],
-            formats: ["jpeg", "webp", "avif"],
-            sharpOptions: { quality: 90 },
-            filenameFormat: function (id, src, width, format, options) {
-                const extension = path.extname(src);
-                const name = path.basename(src, extension);
-
-                return `${name}-${width}w.${format}`;
-            },
-            urlPath: "/static/testimonials",
-            outputDir: "./dist/static/testimonials",
-        });
-    
-        let lowestSrc = stats["jpeg"][0];
-    
-        const srcset = Object.keys(stats).reduce(
-            (acc, format) => ({
-                ...acc,
-                [format]: stats[format].reduce(
-                    (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-                    ""
-                ),
-            }),
-            {}
-        );
-
-        const sourceAVIF = `<source type="image/avif" srcset="${srcset["avif"]}" >`;
-        const sourceWEBP = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-    
-        const img = `<img
-            loading="lazy"
-            decoding="async"
-            alt="${alt}"
-            src="${lowestSrc.url}"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
-            srcset="${srcset["jpeg"]}"
-            width="${lowestSrc.width}"
-            height="${lowestSrc.height}">`;
+        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [64, 96, 128], "/static/testimonials", "./dist/static/testimonials");
 
         return outdent`
             <picture>

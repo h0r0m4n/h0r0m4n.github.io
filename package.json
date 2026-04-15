@@ -4,9 +4,10 @@
   "description": "A personal website project.",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --watch --no-source-map src/sass:dist/css/",
+    "clean": "rm -rf dist .cache",
+    "watch:sass": "sass --silence-deprecation=import --watch --no-source-map src/sass:dist/css/",
     "watch:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "build:sass": "sass --style=compressed --no-source-map src/sass:dist/css/",
+    "build:sass": "sass --silence-deprecation=import --style=compressed --no-source-map src/sass:dist/css/",
     "build:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:* --sequential"
@@ -23,15 +24,15 @@
   },
   "homepage": "https://github.com/h0r0m4n/h0r0m4n.github.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^4.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "clean-css": "^5.2.4",
-    "luxon": "^2.5.2",
-    "npm-run-all": "^4.1.5",
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "clean-css": "^5.3.3",
+    "luxon": "^3.5.0",
+    "npm-run-all2": "^7.0.2",
     "outdent": "^0.8.0",
     "path": "^0.12.7",
-    "sass": "^1.49.9"
+    "sass": "^1.83.0"
   },
   "engines": {
     "node": ">=18.0.0"
