@@ -16,14 +16,20 @@
         </h1>
         <nav class="intro__nav">
             <ul>
-                <li><a href="/"{% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
                 <li>
-                    <a href="/#works">Case studies</a>
-                    <span>&</span>
-                    <a href="/projects/"{% if page.url == '/projects/' %}class="active"{% endif %}>Projects</a>
+                    <a href="/" class="intro__nav-link {% if page.url == '/' %}intro__nav-link--active{% endif %}">Home</a>
                 </li>
-                <li><a href="/about/"{% if page.url == '/about/' %}class="active"{% endif %}>About me</a></li>
-                <li><a href="#contact">Get in touch</a></li>
+                <li>
+                    <a href="/#works" class="intro__nav-link">Case studies</a>
+                    <span>&</span>
+                    <a href="/projects/" class="intro__nav-link {% if page.url == '/projects/' %}intro__nav-link--active{% endif %}">Projects</a>
+                </li>
+                <li>
+                    <a href="/about/" class="intro__nav-link {% if page.url == '/about/' %}intro__nav-link--active{% endif %}">About me</a>
+                </li>
+                <li>
+                    <a href="#contact" class="intro__nav-link">Get in touch</a>
+                </li>
             </ul>
         </nav>
         {% if page.url == '/' %}
