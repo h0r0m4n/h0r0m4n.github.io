@@ -1,15 +1,15 @@
 [
   {
+    "title": "Claude Code",
+    "link": "https://claude.com/product/claude-code"
+  },
+  {
+    "title": "Cursor",
+    "link": "https://cursor.com"
+  },
+  {
     "title": "Figma",
     "link": "https://figma.com"
-  },
-  {
-    "title": "Gemini",
-    "link": "https://gemini.google.com"
-  },
-  {
-    "title": "Claude",
-    "link": "https://claude.ai"
   },
   {
     "title": "Notion",
@@ -18,9 +18,5 @@
   {
     "title": "Slack",
     "link": "https://slack.com"
-  },
-  {
-    "title": "Cursor",
-    "link": "https://cursor.com"
   }
 ]
