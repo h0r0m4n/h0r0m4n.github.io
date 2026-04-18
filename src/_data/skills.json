@@ -4,14 +4,13 @@
         "body": [
             "Design Strategy",
             "User Experience Design",
-            "User Iterface Design",
+            "User Interface Design",
             "Design Systems",
             "Data Visualization",
             "Visual Design",
             "Icon Design",
             "Mobile Design",
-            "Low & High-fi prototyping",
-            "Mentorship"
+            "Low & High-fi prototyping"
 	    ]
     },
     {
@@ -22,7 +21,8 @@
             "Mobile First Design",
             "Systems Thinking",
             "Hot Potato Process",
-            "SAFe, Agile, & Scrum"
+            "SAFe, Agile, & Scrum",
+            "Technical Writing"
 	    ]
     },
     {
@@ -31,7 +31,9 @@
             "HTML, Nunjucks, & Pug",
             "CSS, Sass, & SCSS",
             "JavaScript & React",
-            "WCAG"
+            "WCAG",
+            "Storybook",
+            "LLMs & Claude Code"
 	    ]
     }
 ]
