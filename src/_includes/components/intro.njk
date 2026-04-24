@@ -14,7 +14,6 @@
                 {% include 'assets/logo.svg' %}
             </a>
         </h1>
-        {% if type == 'work' %}This is a work page{% endif %}
         <nav class="intro__nav">
             <ul>
                 <li>
@@ -35,7 +34,11 @@
             </ul>
         </nav>
         {% if page.url == '/' %}
-            <p class="intro__text">I am a Staff Product Designer at <a href="https://www.analog.com/" target="_blank" rel="noopener noreferrer" class="intro__company">{% include 'assets/analog-devices.svg' %}<span class="t__vh">Analog Devices</span></a>, where I shape the digital tools that power the physical world. With over {% experienceYears %} of experience, I bridge the gap between sophisticated hardware and intuitive user experience, transforming how engineers and enterprises interact with technology.</p>
+            <p class="intro__text">I am a Staff Product Designer at
+                <a href="https://www.analog.com/" target="_blank" rel="noopener noreferrer" class="intro__company">{% include 'assets/analog-devices.svg' %}<span class="t__vh">Analog Devices</span>
+                </a>, where I shape the digital tools that power the physical world. With over {% experienceYears %} of experience, I
+                bridge the gap between sophisticated hardware and intuitive user experience, transforming how engineers and enterprises
+                interact with technology.</p>
         {% endif %}
     </div>
 </header>
