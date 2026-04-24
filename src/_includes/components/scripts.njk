@@ -2,7 +2,7 @@
     <script src="{{ '/js/fancybox.js' | url }}?v={{ site.version }}"></script>
 {% endif %}
 
-{% if layout == 'layouts/work' %}
+{% if type == 'work' %}
     <script src="{{ '/js/carousel.js' | url }}?v={{ site.version }}"></script>
 {% endif %}
 
@@ -33,7 +33,7 @@
     };
 
     // Close modal on esc button
-    {% if layout != 'layouts/work' %}
+    {% if type != 'work' %}
         document.addEventListener("keyup", function(event) {
             if (event.key === 'Escape') {
                 featuredModal.classList.remove('open');
@@ -99,7 +99,7 @@
     }
 
     // STRICT verify: If the local storage value is different redirect to the homepage natively.
-    {% if layout == 'layouts/work' %}
+    {% if type == 'work' %}
         if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
             location.href = '{{ site.url }}';
         }
@@ -135,7 +135,7 @@
     {% endif %}
 
     // Carousel configs
-    {% if layout == 'layouts/work' %}
+    {% if type == 'work' %}
         document.querySelectorAll('.f-carousel').forEach((carousel) => {
             const options = {
                 infinite: false,
