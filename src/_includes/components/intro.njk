@@ -20,9 +20,10 @@
                     <a href="/" class="intro__nav-link {% if page.url == '/' %}intro__nav-link--active{% endif %}">Home</a>
                 </li>
                 <li>
-                    <a href="/#works" class="intro__nav-link">Case studies</a>
+                    <a href="/#works" class="intro__nav-link {% if type == 'work' %}intro__nav-link--active{% endif %}">Case studies</a>
                     <span>&</span>
-                    <a href="/projects/" class="intro__nav-link {% if page.url == '/projects/' %}intro__nav-link--active{% endif %}">Projects</a>
+                    <a href="/projects/" class="intro__nav-link {% if page.url == '/projects/' %}intro__nav-link--active{% endif %}">
+                        Projects</a>
                 </li>
                 <li>
                     <a href="/about/" class="intro__nav-link {% if page.url == '/about/' %}intro__nav-link--active{% endif %}">About me</a>
@@ -33,7 +34,11 @@
             </ul>
         </nav>
         {% if page.url == '/' %}
-            <p class="intro__text">I am a Staff Product Designer at <a href="https://www.analog.com/" target="_blank" rel="noopener noreferrer" class="intro__company">{% include 'assets/analog-devices.svg' %}<span class="t__vh">Analog Devices</span></a>, where I shape the digital tools that power the physical world. With over {% experienceYears %} of experience, I bridge the gap between sophisticated hardware and intuitive user experience, transforming how engineers and enterprises interact with technology.</p>
+            <p class="intro__text">I am a Staff Product Designer at
+                <a href="https://www.analog.com/" target="_blank" rel="noopener noreferrer" class="intro__company">{% include 'assets/analog-devices.svg' %}<span class="t__vh">Analog Devices</span>
+                </a>, where I shape the digital tools that power the physical world. With over {% experienceYears %} of experience, I
+                bridge the gap between sophisticated hardware and intuitive user experience, transforming how engineers and enterprises
+                interact with technology.</p>
         {% endif %}
     </div>
 </header>

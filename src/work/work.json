@@ -1,3 +1,4 @@
 {
-  "layout": "layouts/work"
+  "layout": "layouts/work",
+  "type": "work"
 }
