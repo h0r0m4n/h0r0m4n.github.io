@@ -1,12 +1,11 @@
 {
-    "name": "horoman.com",
+    "name": "Roman Horokhovatskyy",
+    "short_name": "horoman",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#322abb",
     "icons": [
-        {
-            "src": "/favicon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
-        },
         {
             "src": "/favicon-192x192.png",
             "sizes": "192x192",

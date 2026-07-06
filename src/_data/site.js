@@ -2,7 +2,7 @@
 const startingDate = '2008-09-01';
 const startingYear = new Date(startingDate).getFullYear();
 
-module.exports = {
+export default {
     title: 'Roman Horokhovatskyy',
     description: 'Personal homepage of Roman Horokhovatskyy a Ukrainian multi-disciplinary digital designer based in Dublin, Ireland.',
     keywords: 'Roman, Horokhovatskyy, @horoman, @h0r0m4n, Product Design, Design Strategy, Interaction Design, User Interface Design, User Experience Design, Design Systems, AI',

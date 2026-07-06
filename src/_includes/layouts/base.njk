@@ -3,7 +3,7 @@
     <head>
         {% include 'components/head.njk' %}
     </head>
-    <body>
+    <body data-pwd-hash="{{ site.password | base64 }}" data-page-type="{% if type == 'work' %}work{% elif page.url == '/projects/' %}projects{% else %}default{% endif %}" data-site-url="{{ site.url }}">
         <div id="top"></div>
         {{ content | safe }}
         {% include 'components/footer.njk' %}
