@@ -1,6 +1,6 @@
 ---
 title: Antechamber
-description: I crafted the GUI and motion design for a short video titled "Antechamber," inspired by the TV series Person of Interest. This project channels the series' intricate storytelling and innovative surveillance concepts, creating a compelling visual narrative that captivates the audience.
+description: I crafted the GUI and motion design for a short video titled "Antechamber," inspired by the TV series Person of Interest. This project channels the series' intricate storytelling and surveillance concepts, creating a strong visual narrative.
 client:
 css:
   primary: '#fff'

@@ -1,6 +1,6 @@
 ---
 title: Euroshop
-description: Designed an app for trade show, enhancing retail experience with innovative, user-friendly shopping solutions.
+description: Designed an app for trade show, enhancing retail experience with simple, user-friendly shopping solutions.
 client: Cefla
 css:
   primary: '#fff'
@@ -29,7 +29,7 @@ thumbnailRatio: 4-3
 
 ## Problem Definition & Discovery
 
-Cefla, an international multi-business company, sought to revolutionize the retail experience by creating a seamless and efficient shopping experience for its customers. The company's goal was to address the challenges of traditional stores, such as long checkout lines and the need for frequent human interaction, while also reducing operational costs.
+Cefla, an international multi-business company, sought to improve the retail experience by creating an efficient shopping flow for its customers. The company's goal was to address the challenges of traditional stores, such as long checkout lines and the need for frequent human interaction, while also reducing operational costs.
 
 To achieve this, Cefla envisioned an app-based solution that would provide customers with a personalized and convenient shopping experience. The app would allow customers to scan products, make payments, and receive real-time product information, all while streamlining the checkout process.
 
@@ -54,13 +54,13 @@ Throughout the design process, I employed a range of user-centered methodologies
 
 One of the primary challenges was designing a user interface that was intuitive and easy to navigate, even for first-time users. This required careful consideration of the user's journey throughout the shopping process and ensuring that the app was clear and accessible.
 
-Another challenge was integrating Cefla's existing retail infrastructure with the app, including the point-of-sale system and inventory management software. This required close collaboration with Cefla's IT team to ensure a seamless integration between the app and the existing systems.
+Another challenge was integrating Cefla's existing retail infrastructure with the app, including the point-of-sale system and inventory management software. This required close collaboration with Cefla's IT team to ensure a smooth integration between the app and the existing systems.
 
 To address these challenges, I implemented the following strategies:
 
 - **User-Friendly Interface**: Created a user interface that was intuitive and easy to navigate, using clear language, consistent icons, and simple navigation patterns.
 - **Intuitive Interaction Design**: Designed interactions that were natural and familiar to users, such as using gestures and touch-based controls.
-- **Robust System Integration**: Developed a robust system integration that seamlessly connected the app with Cefla's existing retail infrastructure.
+- **System Integration**: Developed an integration that connected the app with Cefla's existing retail infrastructure.
 - **Data-Driven Insights**: Utilized data analytics to gain insights into user behavior and preferences, which helped to inform design decisions and improve the overall user experience.
 
 {% image-big "src/static/work/cefla-euroshop-2.jpg" "" "Overview of three personas we pick for the Cefla demo app." %}
@@ -134,7 +134,7 @@ Throughout the Cefla Euroshop project, I gained valuable insights into the impor
 
 ## Overall Impact
 
-The Cefla Euroshop app has played a pivotal role in transforming the way Cefla interacts with its customers. By providing a seamless and user-friendly experience, the app has not only improved customer satisfaction but also reduced operational costs and streamlined the retail process. As a result of the app's success, Cefla is now exploring new ways to integrate technology into its retail operations to further enhance the customer experience.
+The Cefla Euroshop app has improved how Cefla interacts with its customers. By providing an easy-to-use experience, the app has not only improved customer satisfaction but also reduced operational costs and streamlined the retail process. As a result of the app's success, Cefla is now exploring new ways to integrate technology into its retail operations to further enhance the customer experience.
 
 - **Operational Cost Reduction:** The efficient use of [Ublique’s](https://ublique.ai/en/) AI reduced operational costs by 15%, allowing resources to be allocated to further innovation.
 - **Strategic Business Impact:** Following the Euroshop prototype success, Cefla is now investing in additional technologies to enhance business opportunities, aiming for a fully integrated digital environment in their clients.
