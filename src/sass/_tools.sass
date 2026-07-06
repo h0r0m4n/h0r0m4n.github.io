@@ -30,13 +30,11 @@
             backface-visibility: hidden
             -webkit-font-smoothing: subpixel-antialiased
             &:hover
-                -webkit-filter: brightness(110%)
                 filter: brightness(110%)
                 transform: scale(1.05)
                 @include mixins.mq-large
                     transform: scale(1.1)
                 @media (prefers-color-scheme: dark)
-                    -webkit-filter: brightness(112%)
                     filter: brightness(112%)
         &--2
             transition: transform .3s cubic-bezier(0, 0, .5, 1)
