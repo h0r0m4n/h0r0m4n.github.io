@@ -82,5 +82,40 @@
                 height: 2.5rem
 
     &__hardware
+        li
+            &::marker
+                color: var(--color-neutral-2)
         li + li
             margin-top: var(--size-xs)
+        &__category
+            color: var(--color-neutral-1)
+            font-size: 0.85em
+            margin-left: 0.25rem
+        &__sublist
+            margin-top: var(--size-xs)
+            padding-inline-start: var(--size-m)
+            font-size: 0.825em
+                    
+        .hardware-subdetails
+            summary
+                cursor: pointer
+                user-select: none
+                &:hover
+                    color: var(--color-secondary)
+                    
+        .hardware-details
+            margin-bottom: var(--size-s)
+            
+            &:last-child
+                border-bottom: none
+                margin-bottom: 0
+                padding-bottom: 0
+            
+            summary
+                cursor: pointer
+                user-select: none
+                transition: color 150ms ease
+                margin-bottom: 0
+                
+                &:hover
+                    color: var(--color-secondary)
