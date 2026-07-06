@@ -28,7 +28,7 @@
 
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}?v={{ site.version }}">
 
-{% if page.url == '/projects/' %}
+{% if page.url == '/projects/' or type == 'work' %}
     <link rel="stylesheet" href="{{ '/css/fancybox.css' | url }}?v={{ site.version }}">
 {% endif %}
 

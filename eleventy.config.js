@@ -162,15 +162,17 @@ export default function (eleventyConfig) {
     // Work image
     // Usage: {% image "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
     eleventyConfig.addShortcode('image', async (src, alt, caption) => {
-        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [960, 1280, 1920, 2560], "/static/work", "./dist/static/work", 'async', '(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw');
+        const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, alt, [960, 1280, 1920, 2560], "/static/work", "./dist/static/work", 'async', '(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw');
 
         return outdent`
             <figure class="large">
-                <picture>
-                    ${sourceAVIF}
-                    ${sourceWEBP}
-                    ${img}
-                </picture>
+                <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``}>
+                    <picture>
+                        ${sourceAVIF}
+                        ${sourceWEBP}
+                        ${img}
+                    </picture>
+                </a>
                 ${caption ? `<figcaption class="t__container">${caption}</figcaption>` : ``}
             </figure>
         `;
@@ -179,15 +181,17 @@ export default function (eleventyConfig) {
     // Work image full-width
     // Usage: {% image-big "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
     eleventyConfig.addShortcode('image-big', async (src, alt, caption) => {
-      const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(src, alt, [1920, 2560, 3840, 5120], "/static/work", "./dist/static/work", 'async', '100vw');
+      const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, alt, [1920, 2560, 3840, 5120], "/static/work", "./dist/static/work", 'async', '100vw');
 
       return outdent`
           <figure class="full">
-              <picture>
-                  ${sourceAVIF}
-                  ${sourceWEBP}
-                  ${img}
-              </picture>
+              <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``}>
+                  <picture>
+                      ${sourceAVIF}
+                      ${sourceWEBP}
+                      ${img}
+                  </picture>
+              </a>
               ${caption ? `<figcaption class="t__container">${caption}</figcaption>` : ``}
           </figure>
       `;

@@ -121,7 +121,7 @@
     window.addEventListener('load', removeLocationHash);
 
     // ---- Lightbox configs (Fancybox) ----
-    if (isProjectsPage && typeof Fancybox !== 'undefined') {
+    if ((isProjectsPage || isWorkPage) && typeof Fancybox !== 'undefined') {
         Fancybox.bind('[data-fancybox]', {
             contentClick: false,
             Thumbs: {

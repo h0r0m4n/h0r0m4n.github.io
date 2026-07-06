@@ -1,4 +1,4 @@
-{% if page.url == '/projects/' %}
+{% if page.url == '/projects/' or type == 'work' %}
     <script src="{{ '/js/fancybox.js' | url }}?v={{ site.version }}" defer></script>
 {% endif %}
 
