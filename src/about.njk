@@ -82,27 +82,40 @@ css:
                 <h3 class="t__typedivider">Hardware I use</h3>
                 <p>Behold the arsenal of tools that form the backbone of my creative endeavors. These are the instruments that consistently accompany me in the pursuit of crafting excellence:</p>
 
-                {% if hardware.professional %}
-                <h4 class="h6">Professional</h4>
+                {% for category, items in hardware %}
+                {% if items.length %}
+                <h4 class="h6" style="text-transform: capitalize;">{{ category }}</h4>
                 <ul class="link-style">
-                    {% for gadget in hardware.professional %}
+                    {% for gadget in items %}
                         <li>
+                            {% if gadget.link and gadget.link != "LINK NON CE" and gadget.link != "#" %}
                             <a href="{{ gadget.link | url }}" rel="noopener noreferrer nofollow" target="_blank">{{ gadget.title }}</a>
+                            {% else %}
+                            <span>{{ gadget.title }}</span>
+                            {% endif %}
+                            
+                            {% if gadget.category %}
+                            <span class="about__hardware__category">&mdash; {{ gadget.category }}</span>
+                            {% endif %}
+                            
+                            {% if gadget.components %}
+                            <ul class="about__hardware__sublist">
+                                {% for comp in gadget.components %}
+                                <li>
+                                    {% if comp.link %}
+                                    <a href="{{ comp.link | url }}" rel="noopener noreferrer nofollow" target="_blank">{{ comp.title }}</a>
+                                    {% else %}
+                                    <span>{{ comp.title }}</span>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
                 {% endif %}
-
-                {% if hardware.entertainment %}
-                <h4 class="h6">Entertainment</h4>
-                <ul class="link-style">
-                    {% for gadget in hardware.entertainment %}
-                        <li>
-                            <a href="{{ gadget.link | url }}" rel="noopener noreferrer nofollow" target="_blank">{{ gadget.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                {% endfor %}
 
             </div>
         </div>

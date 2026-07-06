@@ -1,54 +1,116 @@
 {
-  "professional": [
+  "workspace": [
     {
-      "title": "MacBook Pro M3 Max (16-inch, 2023)",
-      "link": "https://www.apple.com/macbook-pro/"
+      "title": "Apple MacBook Pro 16\" (M3 Max)",
+      "link": "https://www.apple.com/macbook-pro/",
+      "category": "Laptop"
     },
     {
-      "title": "Studio Display (2022)",
-      "link": "https://www.apple.com/studio-display/"
+      "title": "Apple Studio Display",
+      "link": "https://www.apple.com/studio-display/",
+      "category": "Monitor"
     },
     {
-      "title": "MX Mechanical Mini Keyboard",
-      "link": "https://www.logitech.com/shop/p/mx-mechanical-mini"
+      "title": "Logitech MX Mechanical Mini",
+      "link": "https://www.logitech.com/shop/p/mx-mechanical-mini",
+      "category": "Keyboard"
     },
     {
-      "title": "MX Master 3 Mouse",
-      "link": "https://www.logitech.com/shop/p/mx-master-3s"
+      "title": "Logitech MX Master 3",
+      "link": "https://www.logitech.com/shop/p/mx-master-3s",
+      "category": "Mouse"
     },
     {
-      "title": "iPad Mini (6th gen)",
-      "link": "https://www.apple.com/ipad-mini/"
-    },
-    {
-      "title": "Apple Pencil",
-      "link": "https://www.apple.com/apple-pencil/"
-    },
-    {
-      "title": "iPhone 16 Pro Max",
-      "link": "https://en.wikipedia.org/wiki/IPhone_16_Pro"
-    },
-    {
-      "title": "AirdPods Pro 2",
-      "link": "https://www.apple.com/airpods-pro/"
-    },
-    {
-      "title": "AirPods Max",
-      "link": "https://www.apple.com/airpods-max/"
+      "title": "Brother HL-L2400DWE",
+      "link": "https://store.brother.ie/devices/laser/hl/hll2400dwe",
+      "category": "Printer"
     }
   ],
-  "entertainment": [
+  "Everyday": [
     {
-      "title": "Gigabyte MO27Q2 Monitor",
-      "link": "https://www.gigabyte.com/Monitor/MO27Q2"
+      "title": "Google Pixel 10 Pro XL",
+      "link": "https://store.google.com/product/pixel_10_pro_xl",
+      "category": "Smartphone"
     },
     {
-      "title": "G502 X LIGHTSPEED Mouse",
-      "link": "https://www.logitechg.com/shop/p/g502-x-wireless-lightforce"
+      "title": "Google Pixel Watch 4",
+      "link": "https://store.google.com/product/pixel_watch_4",
+      "category": "Smartwatch"
     },
     {
-      "title": "Arctis Nova 5 Wireless",
-      "link": "https://steelseries.com/gaming-headsets/arctis-nova-5"
+      "title": "Google Fitbit Air",
+      "link": "https://store.google.com/product/google_fitbit_air",
+      "category": "Fitness Tracker"
+    },
+    {
+      "title": "Sharge ICEMAG 2",
+      "link": "https://sharge.com/products/icemag-2",
+      "category": "Power Bank"
+    },
+    {
+      "title": "Motorola Moto Tag 2",
+      "link": "https://www.motorola.com/we/en/moto-tag-2",
+      "category": "Smart Tag"
+    }
+  ],
+  "home": [
+    {
+      "title": "Custom AMD Rig",
+      "category": "PC",
+      "components": [
+        {
+          "title": "HAVN HS 420 VGPU White",
+          "link": "https://havn.global/products/hs-420-vgpu"
+        },
+        {
+          "title": "Gigabyte X870E AORUS PRO ICE",
+          "link": "https://www.gigabyte.com/Motherboard/X870E-AORUS-PRO-ICE"
+        },
+        {
+          "title": "Crucial T705 2TB Gen5 NVMe SSD",
+          "link": "https://crucial.com/ssd/t705/ct2000t705ssd3"
+        },
+        {
+          "title": "Corsair Vengeance RGB 32GB DDR5-6000",
+          "link": "https://www.corsair.com/eu/en/p/memory/cmh32gx5m2b6000c30w/vengeance-rgb-32gb-2x16gb-ddr5-dram-6000mt-s-cl30-memory-kit-white-cmh32gx5m2b6000c30w"
+        },
+        {
+          "title": "AMD Ryzen 7 9800X3D",
+          "link": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        },
+        {
+          "title": "XFX Mercury Radeon RX 9070XT OC White",
+          "link": "https://www.xfxforce.com/shop/xfx-mercury-amd-radeon-rx-9070xt-oc-white-gaming-edition-with-rgb"
+        },
+        {
+          "title": "Corsair iCUE LINK TITAN 360",
+          "link": "https://www.corsair.com/us/en/p/cpu-coolers/cw-9061021-ww/icue-link-titan-360-rx-rgb-aio-liquid-cpu-cooler-white-cw-9061021-ww"
+        },
+        {
+          "title": "5x Corsair iCUE LINK LX140 RGB 140mm",
+          "link": "https://www.corsair.com/uk/en/p/case-fans/co-9051031-ww/icue-link-lx140-rgb-140mm-pwm-single-fan-expansion-white-co-9051031-ww"
+        }
+      ]
+    },
+    {
+      "title": "Gigabyte MO27Q2",
+      "link": "https://www.gigabyte.com/Monitor/MO27Q2",
+      "category": "Monitor"
+    },
+    {
+      "title": "FiiO K7",
+      "link": "https://www.fiio.com/k7",
+      "category": "DAC/Amp"
+    },
+    {
+      "title": "Beyerdynamic DT 1770 PRO MKII",
+      "link": "https://beyerdynamic.com/p/dt-1770-pro-mk-2",
+      "category": "Headphones"
+    },
+    {
+      "title": "Logitech G502 X LIGHTSPEED",
+      "link": "https://www.logitechg.com/shop/p/g502-x-wireless-lightforce",
+      "category": "Mouse"
     }
   ]
 }
