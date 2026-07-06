@@ -82,11 +82,13 @@ css:
                 <h3 class="t__typedivider">Hardware I use</h3>
                 <p>Behold the arsenal of tools that form the backbone of my creative endeavors. These are the instruments that consistently accompany me in the pursuit of crafting excellence:</p>
 
+                <div class="about__hardware-accordions" style="margin-top: var(--size-l);">
                 {% for category, items in hardware %}
                 {% if items.length %}
-                <h4 class="h6" style="text-transform: capitalize;">{{ category }}</h4>
-                <ul class="link-style">
-                    {% for gadget in items %}
+                <details class="hardware-details" {% if loop.first %}open{% endif %}>
+                    <summary class="h6" style="text-transform: capitalize;">{{ category }}</summary>
+                    <ul class="link-style hardware-details__content">
+                        {% for gadget in items %}
                         <li>
                             {% if gadget.link and gadget.link != "LINK NON CE" and gadget.link != "#" %}
                             <a href="{{ gadget.link | url }}" rel="noopener noreferrer nofollow" target="_blank">{{ gadget.title }}</a>
@@ -112,10 +114,12 @@ css:
                             </ul>
                             {% endif %}
                         </li>
-                    {% endfor %}
-                </ul>
+                        {% endfor %}
+                    </ul>
+                </details>
                 {% endif %}
                 {% endfor %}
+                </div>
 
             </div>
         </div>
