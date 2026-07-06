@@ -55,6 +55,22 @@
   ],
   "home": [
     {
+      "title": "Framework Laptop 13 Pro",
+      "category": "Laptop",
+      "link": "https://frame.work/",
+      "components": [
+        {
+          "title": "Intel Core Ultra 7 358H"
+        },
+        {
+          "title": "32GB LPDDR5X LPCAMM2"
+        },
+        {
+          "title": "SanDisk SN7100 1TB Gen4 NVMe SSD"
+        }
+      ]
+    },
+    {
       "title": "Custom AMD Rig",
       "category": "PC",
       "components": [
