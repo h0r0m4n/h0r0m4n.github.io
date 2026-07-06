@@ -166,7 +166,7 @@ export default function (eleventyConfig) {
 
         return outdent`
             <figure class="large">
-                <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``}>
+                <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``} class="t__hover t__hover--2" style="display: block;">
                     <picture>
                         ${sourceAVIF}
                         ${sourceWEBP}
@@ -185,7 +185,7 @@ export default function (eleventyConfig) {
 
       return outdent`
           <figure class="full">
-              <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``}>
+              <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``} class="t__hover t__hover--2" style="display: block;">
                   <picture>
                       ${sourceAVIF}
                       ${sourceWEBP}
