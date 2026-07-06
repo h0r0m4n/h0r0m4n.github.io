@@ -9,11 +9,11 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 export default function (eleventyConfig) {
     // Copy
     const passthroughCopies = [
-        {"src/static/fonts": "/static/fonts"},
-        {"src/static/assets": "/static/assets"},
-        {"src/static/work/*.mp4": "/static/work"},
-        {"src/static/testimonials": "/static/testimonials"},
-        {"src/static/books": "/static/books"},
+        { "src/static/fonts": "/static/fonts" },
+        { "src/static/assets": "/static/assets" },
+        { "src/static/work/*.mp4": "/static/work" },
+        { "src/static/testimonials": "/static/testimonials" },
+        { "src/static/books": "/static/books" },
         "src/*.{png,svg,ico}",
         "src/site.webmanifest",
         "src/robots.txt",
@@ -25,7 +25,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addWatchTarget('./src/sass/');
 
     // Collections
-    eleventyConfig.addCollection('work', function(collectionApi) {
+    eleventyConfig.addCollection('work', function (collectionApi) {
         return collectionApi.getFilteredByGlob('src/work/**/*.md').reverse();
     });
 
@@ -34,7 +34,7 @@ export default function (eleventyConfig) {
         if (n < 0) {
             return array.slice(n);
         }
-    
+
         return array.slice(0, n);
     });
 
@@ -49,12 +49,12 @@ export default function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter('year', dateObj => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc'} ).get('year');
+        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).get('year');
     });
 
     // Stats short-code
     // Usage: {% stats "Label 1" "Value 1" "Label 2" "Value 2" "Label 3" "Value 3" "Label 4" "Value 4" %}
-    eleventyConfig.addShortcode('stats', function(label1, value1, label2, value2, label3, value3, label4, value4) {
+    eleventyConfig.addShortcode('stats', function (label1, value1, label2, value2, label3, value3, label4, value4) {
         return outdent`
             <div class="stats">
                 ${label1 ? `<p><span class="title">${label1}</span><span class="value">${value1}</span></p>` : ``}
@@ -66,7 +66,7 @@ export default function (eleventyConfig) {
     });
 
     // Year short-code
-    eleventyConfig.addShortcode('year', function() {
+    eleventyConfig.addShortcode('year', function () {
         return `${new Date().getFullYear()}`;
     });
 
@@ -98,7 +98,7 @@ export default function (eleventyConfig) {
 
     // Post video
     // Usage: {% video "my-video" "My caption…" %}
-    eleventyConfig.addShortcode('video', function(src, autoplay, caption) {
+    eleventyConfig.addShortcode('video', function (src, autoplay, caption) {
         return outdent`
             <figure>
                 <video width="960" height="540" controls muted ${autoplay ? `autoplay` : ``} playsinline disablePictureInPicture>
@@ -113,7 +113,7 @@ export default function (eleventyConfig) {
         const resetColor = "\x1b[0m";
         const fgCyan = "\x1b[36m";
         console.log(`[eleventy-img]${fgCyan} Processing ${src}...${resetColor}`);
-        
+
         let stats = await Image(src, {
             widths,
             formats: ["jpeg", "webp", "avif"],
@@ -181,9 +181,9 @@ export default function (eleventyConfig) {
     // Work image full-width
     // Usage: {% image-big "src/static/work/file-name.jpg" "My alt…" "My caption…" %}
     eleventyConfig.addShortcode('image-big', async (src, alt, caption) => {
-      const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, alt, [1920, 2560, 3840, 5120], "/static/work", "./dist/static/work", 'async', '100vw');
+        const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, alt, [1920, 2560, 3840, 5120], "/static/work", "./dist/static/work", 'async', '100vw');
 
-      return outdent`
+        return outdent`
           <figure class="full">
               <a href="${largestSrc.url}" data-fancybox="gallery" ${caption ? `data-caption="${caption}"` : ``} class="t__hover t__hover--2" style="display: block;">
                   <picture>
@@ -200,31 +200,31 @@ export default function (eleventyConfig) {
     // Work carousel
     // Usage: {% carousel "src/static/work/file-name-1.jpg" "6" "My caption…" %}
     eleventyConfig.addAsyncShortcode('carousel', async (src, count, alt) => {
-      const generateUniqueId = () => 'carousel-' + Math.random().toString(36).substr(2, 9);
-      const id = generateUniqueId();
-      let images = [];
-  
-      for (let i = 1; i <= count; i++) {
-        let imageSrc = src.replace(/-1(\.[\w\d_-]+)$/i, `-${i}$1`);
-  
-        const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(
-          imageSrc, 
-          alt ? `${alt} - Slide ${i}` : `Slide ${i}`, 
-          [960, 1280, 1920, 2560], 
-          "/static/work", 
-          "./dist/static/work"
-        );
-  
-        images.push(outdent`
+        const generateUniqueId = () => 'carousel-' + Math.random().toString(36).substr(2, 9);
+        const id = generateUniqueId();
+        let images = [];
+
+        for (let i = 1; i <= count; i++) {
+            let imageSrc = src.replace(/-1(\.[\w\d_-]+)$/i, `-${i}$1`);
+
+            const { sourceAVIF, sourceWEBP, img } = await getPictureMarkup(
+                imageSrc,
+                alt ? `${alt} - Slide ${i}` : `Slide ${i}`,
+                [960, 1280, 1920, 2560],
+                "/static/work",
+                "./dist/static/work"
+            );
+
+            images.push(outdent`
           <picture class="f-carousel__slide">
             ${sourceAVIF}
             ${sourceWEBP}
             ${img}
           </picture>
         `);
-      }
-  
-      return outdent`
+        }
+
+        return outdent`
         <figure id="${id}" class="f-carousel large">
           ${images.join('\n')}
         </figure>
@@ -248,9 +248,9 @@ export default function (eleventyConfig) {
     // Work lightbox
     // Usage: {% lightbox "static/work/file-name.jpg" "Gallery 1" "Caption 1" "16:10" %}
     eleventyConfig.addNunjucksAsyncShortcode('lightbox', async (src, galleryName, caption, ratio) => {
-      const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, caption, [960, 1280, 2560], "/static/work", "./dist/static/work", "sync", '(min-width: 50rem) 50vw, 100vw');
-  
-      return outdent`
+        const { sourceAVIF, sourceWEBP, img, largestSrc } = await getPictureMarkup(src, caption, [960, 1280, 2560], "/static/work", "./dist/static/work", "sync", '(min-width: 50rem) 50vw, 100vw');
+
+        return outdent`
           <a href="${largestSrc.url}" data-fancybox="${galleryName}" data-caption="${caption}" class="t__hover t__hover--2">
               <picture class="t__card__image t__ratio t__ratio--${ratio}">
                   ${sourceAVIF}
