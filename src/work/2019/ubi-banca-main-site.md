@@ -1,6 +1,6 @@
 ---
 title: Main website
-description: I led the comprehensive restyling of the main UBI Banca website, encompassing landing pages, search functionalities, service offerings, and support features.
+description: I led the restyling of the main UBI Banca website, encompassing landing pages, search functionalities, service offerings, and support features.
 client: UBI Banca
 role: Lead Interface Designer
 roles:

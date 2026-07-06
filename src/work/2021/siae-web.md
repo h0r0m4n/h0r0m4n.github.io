@@ -36,7 +36,7 @@ SIAE, a leading Italian non-profit organisation, had experienced rapid growth, e
 
 ## Discovery & Initial Assessment
 
-To address this issue, I conducted a comprehensive user research study to understand the impact of the inconsistent design on user experience.
+To address this issue, I conducted user research to understand the impact of the inconsistent design on user experience.
 
 {% image "src/static/work/siae-design-system-workshop.jpg" "" "Some workshops and meetings that brought together representatives from different disciplines." %}
 
@@ -81,7 +81,7 @@ This provided several benefits:
 
 {% image-big "src/static/work/siae-design-system-1.jpg" "" "The page features an advanced table component design meticulously crafted and tailored to meet the specific needs of SIAE's customers." %}
 {% image-big "src/static/work/siae-design-system-2.jpg" "" "The news article template emphasizes a long-form approach, incorporating strategically placed image regions to enhance visual engagement." %}
-{% image-big "src/static/work/siae-design-system-3.jpg" "" "The logged-in homepage displays a comprehensive array of available services." %}
+{% image-big "src/static/work/siae-design-system-3.jpg" "" "The logged-in homepage displays an array of available services." %}
 {% image-big "src/static/work/siae-design-system-4.jpg" "" "The news page hosts various collections of articles and a dedicated press room section." %}
 {% image-big "src/static/work/siae-design-system-5.jpg" "" "The homepage, created in collaboration with the marketing team, is tailored for logged-out users." %}
 
@@ -242,7 +242,7 @@ The development of the SIAE Design System took approximately twelve months, invo
 
 ## Results & Impact
 
-Implementing the SIAE Design System has had a profound positive impact on the organisation. It has achieved the following key objectives:
+Implementing the SIAE Design System has had a positive impact on the organisation. It has achieved the following key objectives:
 
 1. **Enhanced User Experience**: The consistent design across all products has led to a more intuitive and consistent user experience, improving the overall brand perception and user satisfaction.
 2. **Increased Efficiency**: The Design System has streamlined the design and development processes, reducing the time spent on repetitive tasks and increasing the speed of product development. This has also led to improved code quality and reduced development errors.
@@ -255,9 +255,9 @@ Besides the adoption of design systen, there were a few other significant result
 
 ## Learnings & Recommendations
 
-Throughout the project, I learned several valuable lessons that I would recommend to other teams embarking on a similar journey:
+Throughout the project, I learned several valuable lessons that I would recommend to other teams doing similar work:
 
 1. **Prioritize Collaboration**: Collaboration between designers, developers, and marketing teams is crucial for successfully implementing a Design System. This ensures that all stakeholders are aligned on the goals and objectives of the system.
 2. **Embrace Flexibility**: A rigid approach to enforcing the Design System can lead to resistance and hinder adoption. It's essential to be flexible and allow for some customisation to accommodate specific product needs and requirements.
-3. **Document Thoroughly**: A well-documented Design System is essential for its adoption and effective use. Clear and comprehensive documentation should be readily accessible to both designers and developers.
+3. **Document Thoroughly**: A well-documented Design System is essential for its adoption and effective use. Clear documentation should be readily accessible to both designers and developers.
 4. **Continuously Refine**: The Design System should be an evolving entity that adapts to the changing needs of the organisation and the evolving user landscape. Regular reviews and updates are necessary to maintain its relevance and effectiveness.

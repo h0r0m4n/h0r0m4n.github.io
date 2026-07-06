@@ -30,7 +30,7 @@ thumbnailRatio: 16-10
 
 ## Problem Definition & Discovery
 
-SIAE, a non-profit organization responsible for managing music copyrights in Italy, faced a crucial challenge in providing its users with a seamless and efficient mobile experience. Their existing app lacked a cohesive design language, lacked consistent navigation, and failed to cater to the diverse needs of its users. This fragmented approach hindered user engagement and hampered SIAE's ability to effectively serve its clients.
+SIAE, a non-profit organization responsible for managing music copyrights in Italy, needed to provide its users with an efficient mobile experience. Their existing app lacked a cohesive design language, lacked consistent navigation, and failed to cater to the diverse needs of its users. This fragmented approach hindered user engagement and hampered SIAE's ability to effectively serve its clients.
 
 To address these issues, SIAE sought to develop a revamped mobile app that would redefine user experience and streamline operations. The goal was to create a unified platform that would provide users with a centralized hub for managing their SIAE-related activities, from registration and deposit filings to accessing payment information and filing appeals.
 
@@ -59,8 +59,8 @@ Another challenge was the need to accommodate the diverse needs of SIAE's user b
 To address these challenges, I implemented the following strategies:
 
 - **User Flows**: Developed clear and intuitive user flows that guided users through the app's various features, ensuring a smooth and efficient experience.
-- **Pattern Library**: Created a comprehensive design library and components in code that standardized UI elements, color palettes, and typography, ensuring consistency across the app.
-- **Accessibility Features**: Integrated comprehensive accessibility features to ensure that the app was usable by individuals with disabilities.
+- **Pattern Library**: Created a design library and components in code that standardized UI elements, color palettes, and typography, ensuring consistency across the app.
+- **Accessibility Features**: Integrated accessibility features to ensure that the app was usable by individuals with disabilities.
 - **Language Localization**: Provided support for multiple languages to cater to SIAE's international user base.
 
 {% image "src/static/work/siae-plus-0.jpg" "" "" "An overview of User Flows, User Testing and more" %}
@@ -81,7 +81,7 @@ The two most complex features of the SIAE+ is the registration and the possibili
 
 {% image-big "src/static/work/siae-plus-1.jpg" "" "In the performance area, the user can view his performance for all the works deposited in SIAE, make comparisons, and filter the data as needed." %}
 
-{% image-big "src/static/work/siae-plus-2.jpg" "" "Overview of the app’s most important pages and features, such as the dynamic home page, the possibility of depositing prior work in the app, and comparing and filtering the data by year and month." %}
+{% image-big "src/static/work/siae-plus-2.jpg" "" "Overview of the app’s most important pages and features, such as the home page, the possibility of depositing prior work in the app, and comparing and filtering the data by year and month." %}
 
 {% image-big "src/static/work/siae-plus-3.jpg" "" "Overview of the data visualization and manipulation by user" %}
 
@@ -107,6 +107,6 @@ Throughout the SIAE Mobile App project, I gained valuable insights into the impo
 
 ## Overall Impact
 
-The SIAE Mobile App has played a pivotal role in transforming the way SIAE interacts with its users. By providing a seamless and user-friendly experience, the app has not only improved user satisfaction but also streamlined operations and increased efficiency. As a result, SIAE is better equipped to serve its clients and achieve its business goals.
+The SIAE Mobile App improved how SIAE interacts with its users. By providing a user-friendly experience, the app has not only improved user satisfaction but also streamlined operations and increased efficiency. As a result, SIAE is better equipped to serve its clients and achieve its business goals.
 
 The success of the SIAE Mobile App project highlights the importance of prioritizing user needs and adopting a user-centered design approach. By carefully considering user feedback, conducting user research, and designing with accessibility in mind, we can create products that are not only aesthetically pleasing but also truly useful and engaging for users.
