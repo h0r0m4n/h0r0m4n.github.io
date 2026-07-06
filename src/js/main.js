@@ -120,6 +120,43 @@
     });
     window.addEventListener('load', removeLocationHash);
 
+    // ---- Avatar ASCII Animation Speedup ----
+    var avatar = document.querySelector('.intro__avatar');
+    var asciiSvg = document.querySelector('.intro__avatar__ascii svg');
+    if (avatar && asciiSvg && typeof asciiSvg.getAnimations === 'function') {
+        var targetRate = 1;
+        var currentRate = 1;
+        var rateReq = null;
+        
+        var updateRate = function() {
+            currentRate += (targetRate - currentRate) * 0.1;
+            var anims = asciiSvg.getAnimations();
+            if (anims.length > 0) {
+                anims[0].playbackRate = currentRate;
+            }
+            if (Math.abs(targetRate - currentRate) > 0.01) {
+                rateReq = window.requestAnimationFrame(updateRate);
+            } else {
+                currentRate = targetRate;
+                if (anims.length > 0) {
+                    anims[0].playbackRate = currentRate;
+                }
+            }
+        };
+
+        avatar.addEventListener('mouseenter', function() {
+            targetRate = 48; // 240s / 5s = 48x speed
+            if (rateReq) window.cancelAnimationFrame(rateReq);
+            updateRate();
+        });
+
+        avatar.addEventListener('mouseleave', function() {
+            targetRate = 1;
+            if (rateReq) window.cancelAnimationFrame(rateReq);
+            updateRate();
+        });
+    }
+
     // ---- Lightbox configs (Fancybox) ----
     if ((isProjectsPage || isWorkPage) && typeof Fancybox !== 'undefined') {
         Fancybox.bind('[data-fancybox]', {
