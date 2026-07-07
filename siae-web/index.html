@@ -13,11 +13,24 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="pinterest-rich-pin" content="false">
 
-
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@h0r0m4n">
+<meta name="twitter:creator" content="@h0r0m4n">
+<meta name="twitter:title" property="og:title" content="Roman Horokhovatskyy — Design System for the Web">
+<meta name="twitter:description" property="og:description" content="Developed a Design System, unifying 10+ SaaS interfaces into a cohesive, efficient user experience, enhancing usability and consistency.">
+<meta name="twitter:url" property="og:url" content="https://horoman.com">
+<meta name="twitter:image" property="og:image" content="https://horoman.com/static/preview.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roman Horokhovatskyy — Design System for the Web">
+<meta property="og:description" content="Developed a Design System, unifying 10+ SaaS interfaces into a cohesive, efficient user experience, enhancing usability and consistency.">
+<meta property="og:url" content="https://horoman.com">
+<meta property="og:site_name" content="Roman Horokhovatskyy">
+<meta property="og:image" content="https://horoman.com/static/preview.jpg">
 
 <title>Roman Horokhovatskyy — SIAE Design System for the Web</title>
 
-
+<link rel="canonical" href="https://horoman.com/siae-web/">
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://horoman.com/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://horoman.com/favicon-32x32.png">
@@ -25,12 +38,17 @@
 <link rel="manifest" href="https://horoman.com/site.webmanifest">
 <link rel="mask-icon" href="https://horoman.com/safari-pinned-tab.svg" color="#fff">
 
-<link rel="stylesheet" href="/css/style.css?v=8.0">
+<link rel="preload" href="/static/fonts/colfax-web-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/klavika-web-display-black.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/css/style.css?v=10">
+
+
+    <link rel="stylesheet" href="/css/fancybox.css?v=10">
 
 
 
-
-    <link rel="stylesheet" href="/css/carousel.css?v=8.0">
+    <link rel="stylesheet" href="/css/carousel.css?v=10">
 
 
 
@@ -87,7 +105,7 @@
 
 
     </head>
-    <body>
+    <body data-pwd-hash="Mzc2MzAx" data-page-type="work" data-site-url="https://horoman.com">
         <div id="top"></div>
         <header id="intro" class="t__section intro">
     <div class="t__container">
@@ -205,19 +223,21 @@
 <h2>Discovery &amp; Initial Assessment</h2>
 <p>To address this issue, I conducted user research to understand the impact of the inconsistent design on user experience.</p>
 <figure class="large">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-workshop-960w.avif 960w , /static/work/siae-design-system-workshop-1280w.avif 1280w , /static/work/siae-design-system-workshop-1920w.avif 1920w , /static/work/siae-design-system-workshop-2560w.avif 2560w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-workshop-960w.webp 960w , /static/work/siae-design-system-workshop-1280w.webp 1280w , /static/work/siae-design-system-workshop-1920w.webp 1920w , /static/work/siae-design-system-workshop-2560w.webp 2560w ," >
-        <img
+    <a href="/static/work/siae-design-system-workshop-2560w.jpeg" data-fancybox="gallery" data-caption="Some workshops and meetings that brought together representatives from different disciplines." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-workshop-960w.avif 960w , /static/work/siae-design-system-workshop-1280w.avif 1280w , /static/work/siae-design-system-workshop-1920w.avif 1920w , /static/work/siae-design-system-workshop-2560w.avif 2560w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-workshop-960w.webp 960w , /static/work/siae-design-system-workshop-1280w.webp 1280w , /static/work/siae-design-system-workshop-1920w.webp 1920w , /static/work/siae-design-system-workshop-2560w.webp 2560w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-workshop-960w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw'
             srcset=" /static/work/siae-design-system-workshop-960w.jpeg 960w , /static/work/siae-design-system-workshop-1280w.jpeg 1280w , /static/work/siae-design-system-workshop-1920w.jpeg 1920w , /static/work/siae-design-system-workshop-2560w.jpeg 2560w ,"
             width="960"
             height="540">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">Some workshops and meetings that brought together representatives from different disciplines.</figcaption>
 </figure>
 <p>The findings revealed that the fragmented interfaces made it difficult for users to navigate between services and understand the brand identity. This inconsistency also created challenges for the development team, leading to increased time spent on repetitive tasks and a higher risk of errors.</p>
@@ -227,19 +247,21 @@
 <p>I needed to reframe the problem into something our design and engineering understand more: collecting all the existing components into a spreadsheet that eventually handed over 200 unique components from all the SIAE services.</p>
 <p>Each component has been categorized, segmented, and labelled for each template and service.</p>
 <figure class="large">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-components-list-960w.avif 960w , /static/work/siae-design-system-components-list-1280w.avif 1280w , /static/work/siae-design-system-components-list-1920w.avif 1920w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-components-list-960w.webp 960w , /static/work/siae-design-system-components-list-1280w.webp 1280w , /static/work/siae-design-system-components-list-1920w.webp 1920w ," >
-        <img
+    <a href="/static/work/siae-design-system-components-list-1920w.jpeg" data-fancybox="gallery" data-caption="This was the inventory spreadsheet that grouped around 200+ unique components across essential product flows." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-components-list-960w.avif 960w , /static/work/siae-design-system-components-list-1280w.avif 1280w , /static/work/siae-design-system-components-list-1920w.avif 1920w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-components-list-960w.webp 960w , /static/work/siae-design-system-components-list-1280w.webp 1280w , /static/work/siae-design-system-components-list-1920w.webp 1920w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-components-list-960w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw'
             srcset=" /static/work/siae-design-system-components-list-960w.jpeg 960w , /static/work/siae-design-system-components-list-1280w.jpeg 1280w , /static/work/siae-design-system-components-list-1920w.jpeg 1920w ,"
             width="960"
             height="525">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">This was the inventory spreadsheet that grouped around 200+ unique components across essential product flows.</figcaption>
 </figure>
 <p>The most important part of the design was to create a consistent visual language across all SIAE services. This included a new colour palette, typography and iconography. Working closely with SIAE's brand guidelines we start to develop a new identity system.</p>
@@ -253,19 +275,21 @@
     <p><span class="title">New Colour System</span><span class="value">14 colours</span></p>
 </div>
 <figure class="large">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-sass-figma-library-960w.avif 960w , /static/work/siae-sass-figma-library-1280w.avif 1280w , /static/work/siae-sass-figma-library-1920w.avif 1920w , /static/work/siae-sass-figma-library-2560w.avif 2560w ," >
-        <source type="image/webp" srcset=" /static/work/siae-sass-figma-library-960w.webp 960w , /static/work/siae-sass-figma-library-1280w.webp 1280w , /static/work/siae-sass-figma-library-1920w.webp 1920w , /static/work/siae-sass-figma-library-2560w.webp 2560w ," >
-        <img
+    <a href="/static/work/siae-sass-figma-library-2560w.jpeg" data-fancybox="gallery" data-caption="Overview of the new components designed in Figma utilising all the features such as properties, auto layout and much more." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-sass-figma-library-960w.avif 960w , /static/work/siae-sass-figma-library-1280w.avif 1280w , /static/work/siae-sass-figma-library-1920w.avif 1920w , /static/work/siae-sass-figma-library-2560w.avif 2560w ," >
+            <source type="image/webp" srcset=" /static/work/siae-sass-figma-library-960w.webp 960w , /static/work/siae-sass-figma-library-1280w.webp 1280w , /static/work/siae-sass-figma-library-1920w.webp 1920w , /static/work/siae-sass-figma-library-2560w.webp 2560w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-sass-figma-library-960w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw'
             srcset=" /static/work/siae-sass-figma-library-960w.jpeg 960w , /static/work/siae-sass-figma-library-1280w.jpeg 1280w , /static/work/siae-sass-figma-library-1920w.jpeg 1920w , /static/work/siae-sass-figma-library-2560w.jpeg 2560w ,"
             width="960"
             height="530">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">Overview of the new components designed in Figma utilising all the features such as properties, auto layout and much more.</figcaption>
 </figure>
 <h3>Prototyping</h3>
@@ -277,19 +301,21 @@
 </div>
 <p>I was able to create interactive prototypes that were tested with real users. These prototypes were often used as part of an agile sprint and allowed us to iterate on each service rapidly.</p>
 <figure class="large">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-prototypes-960w.avif 960w , /static/work/siae-design-system-prototypes-1280w.avif 1280w , /static/work/siae-design-system-prototypes-1920w.avif 1920w , /static/work/siae-design-system-prototypes-2560w.avif 2560w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-prototypes-960w.webp 960w , /static/work/siae-design-system-prototypes-1280w.webp 1280w , /static/work/siae-design-system-prototypes-1920w.webp 1920w , /static/work/siae-design-system-prototypes-2560w.webp 2560w ," >
-        <img
+    <a href="/static/work/siae-design-system-prototypes-2560w.jpeg" data-fancybox="gallery" data-caption="An overview of the complexity of the prototype." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-prototypes-960w.avif 960w , /static/work/siae-design-system-prototypes-1280w.avif 1280w , /static/work/siae-design-system-prototypes-1920w.avif 1920w , /static/work/siae-design-system-prototypes-2560w.avif 2560w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-prototypes-960w.webp 960w , /static/work/siae-design-system-prototypes-1280w.webp 1280w , /static/work/siae-design-system-prototypes-1920w.webp 1920w , /static/work/siae-design-system-prototypes-2560w.webp 2560w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-prototypes-960w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='(min-width: 93.75rem) 84rem, (min-width: 75rem) 68rem, (min-width: 50rem) 68rem, 100vw'
             srcset=" /static/work/siae-design-system-prototypes-960w.jpeg 960w , /static/work/siae-design-system-prototypes-1280w.jpeg 1280w , /static/work/siae-design-system-prototypes-1920w.jpeg 1920w , /static/work/siae-design-system-prototypes-2560w.jpeg 2560w ,"
             width="960"
             height="530">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">An overview of the complexity of the prototype.</figcaption>
 </figure>
 <p>This provided several benefits:</p>
@@ -299,83 +325,93 @@
 <li>Using multiple Figma libraries allowed us to make changes on the fly.</li>
 </ul>
 <figure class="full">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-1-1920w.avif 1920w , /static/work/siae-design-system-1-2560w.avif 2560w , /static/work/siae-design-system-1-3840w.avif 3840w , /static/work/siae-design-system-1-5120w.avif 5120w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-1-1920w.webp 1920w , /static/work/siae-design-system-1-2560w.webp 2560w , /static/work/siae-design-system-1-3840w.webp 3840w , /static/work/siae-design-system-1-5120w.webp 5120w ," >
-        <img
+    <a href="/static/work/siae-design-system-1-5120w.jpeg" data-fancybox="gallery" data-caption="The page features an advanced table component design meticulously crafted and tailored to meet the specific needs of SIAE's customers." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-1-1920w.avif 1920w , /static/work/siae-design-system-1-2560w.avif 2560w , /static/work/siae-design-system-1-3840w.avif 3840w , /static/work/siae-design-system-1-5120w.avif 5120w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-1-1920w.webp 1920w , /static/work/siae-design-system-1-2560w.webp 2560w , /static/work/siae-design-system-1-3840w.webp 3840w , /static/work/siae-design-system-1-5120w.webp 5120w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-1-1920w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='100vw'
             srcset=" /static/work/siae-design-system-1-1920w.jpeg 1920w , /static/work/siae-design-system-1-2560w.jpeg 2560w , /static/work/siae-design-system-1-3840w.jpeg 3840w , /static/work/siae-design-system-1-5120w.jpeg 5120w ,"
             width="1920"
             height="1080">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">The page features an advanced table component design meticulously crafted and tailored to meet the specific needs of SIAE's customers.</figcaption>
 </figure>
 <figure class="full">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-2-1920w.avif 1920w , /static/work/siae-design-system-2-2560w.avif 2560w , /static/work/siae-design-system-2-3840w.avif 3840w , /static/work/siae-design-system-2-5120w.avif 5120w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-2-1920w.webp 1920w , /static/work/siae-design-system-2-2560w.webp 2560w , /static/work/siae-design-system-2-3840w.webp 3840w , /static/work/siae-design-system-2-5120w.webp 5120w ," >
-        <img
+    <a href="/static/work/siae-design-system-2-5120w.jpeg" data-fancybox="gallery" data-caption="The news article template emphasizes a long-form approach, incorporating strategically placed image regions to enhance visual engagement." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-2-1920w.avif 1920w , /static/work/siae-design-system-2-2560w.avif 2560w , /static/work/siae-design-system-2-3840w.avif 3840w , /static/work/siae-design-system-2-5120w.avif 5120w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-2-1920w.webp 1920w , /static/work/siae-design-system-2-2560w.webp 2560w , /static/work/siae-design-system-2-3840w.webp 3840w , /static/work/siae-design-system-2-5120w.webp 5120w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-2-1920w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='100vw'
             srcset=" /static/work/siae-design-system-2-1920w.jpeg 1920w , /static/work/siae-design-system-2-2560w.jpeg 2560w , /static/work/siae-design-system-2-3840w.jpeg 3840w , /static/work/siae-design-system-2-5120w.jpeg 5120w ,"
             width="1920"
             height="1080">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">The news article template emphasizes a long-form approach, incorporating strategically placed image regions to enhance visual engagement.</figcaption>
 </figure>
 <figure class="full">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-3-1920w.avif 1920w , /static/work/siae-design-system-3-2560w.avif 2560w , /static/work/siae-design-system-3-3840w.avif 3840w , /static/work/siae-design-system-3-5120w.avif 5120w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-3-1920w.webp 1920w , /static/work/siae-design-system-3-2560w.webp 2560w , /static/work/siae-design-system-3-3840w.webp 3840w , /static/work/siae-design-system-3-5120w.webp 5120w ," >
-        <img
+    <a href="/static/work/siae-design-system-3-5120w.jpeg" data-fancybox="gallery" data-caption="The logged-in homepage displays an array of available services." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-3-1920w.avif 1920w , /static/work/siae-design-system-3-2560w.avif 2560w , /static/work/siae-design-system-3-3840w.avif 3840w , /static/work/siae-design-system-3-5120w.avif 5120w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-3-1920w.webp 1920w , /static/work/siae-design-system-3-2560w.webp 2560w , /static/work/siae-design-system-3-3840w.webp 3840w , /static/work/siae-design-system-3-5120w.webp 5120w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-3-1920w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='100vw'
             srcset=" /static/work/siae-design-system-3-1920w.jpeg 1920w , /static/work/siae-design-system-3-2560w.jpeg 2560w , /static/work/siae-design-system-3-3840w.jpeg 3840w , /static/work/siae-design-system-3-5120w.jpeg 5120w ,"
             width="1920"
             height="1080">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">The logged-in homepage displays an array of available services.</figcaption>
 </figure>
 <figure class="full">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-4-1920w.avif 1920w , /static/work/siae-design-system-4-2560w.avif 2560w , /static/work/siae-design-system-4-3840w.avif 3840w , /static/work/siae-design-system-4-5120w.avif 5120w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-4-1920w.webp 1920w , /static/work/siae-design-system-4-2560w.webp 2560w , /static/work/siae-design-system-4-3840w.webp 3840w , /static/work/siae-design-system-4-5120w.webp 5120w ," >
-        <img
+    <a href="/static/work/siae-design-system-4-5120w.jpeg" data-fancybox="gallery" data-caption="The news page hosts various collections of articles and a dedicated press room section." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-4-1920w.avif 1920w , /static/work/siae-design-system-4-2560w.avif 2560w , /static/work/siae-design-system-4-3840w.avif 3840w , /static/work/siae-design-system-4-5120w.avif 5120w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-4-1920w.webp 1920w , /static/work/siae-design-system-4-2560w.webp 2560w , /static/work/siae-design-system-4-3840w.webp 3840w , /static/work/siae-design-system-4-5120w.webp 5120w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-4-1920w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='100vw'
             srcset=" /static/work/siae-design-system-4-1920w.jpeg 1920w , /static/work/siae-design-system-4-2560w.jpeg 2560w , /static/work/siae-design-system-4-3840w.jpeg 3840w , /static/work/siae-design-system-4-5120w.jpeg 5120w ,"
             width="1920"
             height="1080">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">The news page hosts various collections of articles and a dedicated press room section.</figcaption>
 </figure>
 <figure class="full">
-    <picture>
-        <source type="image/avif" srcset=" /static/work/siae-design-system-5-1920w.avif 1920w , /static/work/siae-design-system-5-2560w.avif 2560w , /static/work/siae-design-system-5-3840w.avif 3840w , /static/work/siae-design-system-5-5120w.avif 5120w ," >
-        <source type="image/webp" srcset=" /static/work/siae-design-system-5-1920w.webp 1920w , /static/work/siae-design-system-5-2560w.webp 2560w , /static/work/siae-design-system-5-3840w.webp 3840w , /static/work/siae-design-system-5-5120w.webp 5120w ," >
-        <img
+    <a href="/static/work/siae-design-system-5-5120w.jpeg" data-fancybox="gallery" data-caption="The homepage, created in collaboration with the marketing team, is tailored for logged-out users." class="t__hover t__hover--2" style="display: block;">
+        <picture>
+            <source type="image/avif" srcset=" /static/work/siae-design-system-5-1920w.avif 1920w , /static/work/siae-design-system-5-2560w.avif 2560w , /static/work/siae-design-system-5-3840w.avif 3840w , /static/work/siae-design-system-5-5120w.avif 5120w ," >
+            <source type="image/webp" srcset=" /static/work/siae-design-system-5-1920w.webp 1920w , /static/work/siae-design-system-5-2560w.webp 2560w , /static/work/siae-design-system-5-3840w.webp 3840w , /static/work/siae-design-system-5-5120w.webp 5120w ," >
+            <img
             loading="lazy"
             decoding="async"
             alt=""
             src="/static/work/siae-design-system-5-1920w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='100vw'
             srcset=" /static/work/siae-design-system-5-1920w.jpeg 1920w , /static/work/siae-design-system-5-2560w.jpeg 2560w , /static/work/siae-design-system-5-3840w.jpeg 3840w , /static/work/siae-design-system-5-5120w.jpeg 5120w ,"
             width="1920"
             height="1080">
-    </picture>
+        </picture>
+    </a>
     <figcaption class="t__container">The homepage, created in collaboration with the marketing team, is tailored for logged-out users.</figcaption>
 </figure>
 <h2>Challenges &amp; Solutions</h2>
@@ -563,7 +599,7 @@ $<span class="token property">color-on-light-3</span><span class="token punctuat
             decoding="sync"
             alt="iOS & Android App’s"
             src="/static/work/siae-plus-960w.jpeg"
-            sizes='(min-width: 40rem) 50rem, (min-width: 75rem) 50rem, (min-width: 92rem) 50rem'
+            sizes='(min-width: 93.75rem) 25vw, (min-width: 50rem) 50vw, 100vw'
             srcset=" /static/work/siae-plus-960w.jpeg 960w , /static/work/siae-plus-1280w.jpeg 1280w , /static/work/siae-plus-2560w.jpeg 2560w ,"
             width="960"
             height="600">
@@ -648,131 +684,14 @@ $<span class="token property">color-on-light-3</span><span class="token punctuat
 </div>
 
         
+    <script src="/js/fancybox.js?v=10" defer></script>
 
 
-    <script src="/js/carousel.js?v=8.0"></script>
+
+    <script src="/js/carousel.js?v=10" defer></script>
 
 
-<script>
-    if (window.navigator && navigator.serviceWorker) {
-        navigator.serviceWorker.getRegistrations()
-        .then(function(registrations) {
-            registrations.forEach(function(registration) {
-                registration.unregister();
-            });
-        });
-    }
-
-    const featuredLink = document.querySelectorAll('.t__card__link');
-    const featuredWork = 'FeaturedWork';
-    const featuredModal = document.getElementById("modal");
-    const featuredClose = document.getElementById("modal-close");
-    const featuredPassword = document.getElementById("modal-password");
-    const featuredEnter = document.getElementById("modal-enter");
-    const featuredValueHashed = 'Mzc2MzAx';
-    let featuredUrl = '';
-
-    // Close modal
-    featuredClose.onclick = function() {
-        featuredModal.classList.toggle('open');
-        featuredPassword.classList.remove('error');
-        featuredPassword.value = '';
-    };
-
-    // Close modal on esc button
-    
-
-    // Check password natively
-    function checkPassword(parentLink) {
-        if (btoa(featuredPassword.value) === featuredValueHashed) {
-            localStorage.setItem(featuredWork, featuredValueHashed);
-            location.href = parentLink;
-            featuredPassword.classList.remove('error');
-            return true;
-        } else {
-            featuredPassword.classList.add('error');
-            featuredPassword.classList.add('error--play');
-            setTimeout(function(){
-                featuredPassword.classList.remove('error--play');
-            }, 500);
-        }
-    }
-
-    // Static decoupled event listeners 
-    if (featuredEnter && featuredPassword) {
-        featuredEnter.addEventListener("click", function () {
-            if (featuredUrl) checkPassword(featuredUrl);
-        });
-
-        featuredPassword.addEventListener("keyup", function(event) {
-            if (event.key === 'Enter') {
-                featuredEnter.click();
-            }
-        });
-    }
-
-    document.addEventListener('click', function (event) {
-        
-        // Only for links with specific class
-        if (!event.target.matches('.t__card__link')) return;
-
-        // Verify properly using Hash matching
-        if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
-
-            // Show the <Modal>
-            featuredModal.classList.toggle('open');
-            featuredPassword.focus();
-            
-            // Prevent enter the URL natively
-            event.preventDefault();
-
-            // Save the URL dynamically based on current event
-            featuredUrl = event.target.href;
-        }
-    }, false);
-
-    // If the user access `?pwd=376301` url don't require password anymore
-    const queryString = window.location.search;
-    if (queryString === `?pwd=${atob(featuredValueHashed)}`) {
-        localStorage.setItem(featuredWork, featuredValueHashed);
-    }
-
-    // STRICT verify: If the local storage value is different redirect to the homepage natively.
-    
-        if (localStorage.getItem(featuredWork) !== featuredValueHashed) {
-            location.href = 'https://horoman.com';
-        }
-    
-
-    // Remove hash from URL
-    function removeLocationHash(){
-        const noHashURL = window.location.href.replace(/#.*$/, '');
-        window.history.replaceState('', document.title, noHashURL);
-    }
-    window.addEventListener("popstate", removeLocationHash);
-    window.addEventListener("hashchange", function(event){
-        event.preventDefault();
-        removeLocationHash();
-    });
-    window.addEventListener("load", removeLocationHash);
-
-    // Lightbox configs
-    
-
-    // Carousel configs
-    
-        document.querySelectorAll('.f-carousel').forEach((carousel) => {
-            const options = {
-                infinite: false,
-                Dots: {
-                    minCount: 5
-                }
-            };
-            new Carousel(carousel, options);
-        });
-    
-</script>
-
+<script src="/js/main.js?v=10" defer></script>
 
     </body>
 </html>
