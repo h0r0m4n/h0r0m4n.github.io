@@ -31,3 +31,15 @@
                 @include mixins.mq-large
                     height: var(--size-m)
                     width: var(--size-m)
+
+    &__logo
+        margin-top: var(--size-l)
+        @include mixins.mq-small
+            margin-top: var(--size-xl)
+        svg
+            width: 100%
+            height: auto
+            display: block
+            path:not([fill])
+                fill: var(--color-secondary)
+
