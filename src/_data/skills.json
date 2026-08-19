@@ -1,5 +1,5 @@
 [
-	{
+    {
         "title": "Design",
         "body": [
             "Design Strategy",
@@ -11,7 +11,7 @@
             "Icon Design",
             "Mobile Design",
             "Low & High-fi prototyping"
-	    ]
+        ]
     },
     {
         "title": "Methods",
@@ -23,7 +23,7 @@
             "Hot Potato Process",
             "SAFe, Agile, & Scrum",
             "Technical Writing"
-	    ]
+        ]
     },
     {
         "title": "Development",
@@ -32,8 +32,16 @@
             "CSS, Sass, & SCSS",
             "JavaScript & React",
             "WCAG",
-            "Storybook",
-            "LLMs & Claude Code"
-	    ]
+            "Storybook"
+        ]
+    },
+    {
+        "title": "Artificial Intelligence",
+        "body": [
+            "LLMs & Agentic Workflows",
+            "MCP Integrations (Storybook, Chrome DevTools, Miro, Figma)",
+            "Generative AI for Design",
+            "Prompt Engineering"
+        ]
     }
 ]

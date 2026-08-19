@@ -1,7 +1,7 @@
 {
   "workspace": [
     {
-      "title": "Apple MacBook Pro 16\" (M3 Max)",
+      "title": "Apple MacBook Pro 16\" (M3 Pro)",
       "link": "https://www.apple.com/macbook-pro/",
       "category": "Laptop"
     },
@@ -60,13 +60,13 @@
       "link": "https://frame.work/",
       "components": [
         {
-          "title": "Intel Core Ultra 7 358H"
+          "title": "AMD Ryzen™ AI 9 HX 370"
         },
         {
-          "title": "32GB LPDDR5X LPCAMM2"
+          "title": "Crucial DDR5 16GB x2 5600 SODIMM"
         },
         {
-          "title": "SanDisk SN7100 1TB Gen4 NVMe SSD"
+          "title": "Crucial P310 1TB PCIe 4.0"
         }
       ]
     },

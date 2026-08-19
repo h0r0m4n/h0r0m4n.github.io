@@ -215,26 +215,26 @@ $color-on-light-3: rgba(42, 58, 84, 70%);
 
 Contain specific information regarding the visual references and design principles for creating interfaces or other design deliverables. This section focuses on branding (colours, typography, trademarks, logos and more). It also covers guidance on content such as tone of voice and language recommendations.
 
-{% video "siae-design-system-1" "" "Overview of our design principles (in italian language)" %}
+{% video-large "siae-design-system-1" "" "Overview of our design principles (in italian language)" %}
 
 #### Guidelines
 
 The guidelines section contains valuable information on iconography and essential components such as interactive areas, buttons, lists and much more.
 
-{% video "siae-design-system-2" "" "Overview of components" %}
+{% video-large "siae-design-system-2" "" "Overview of components" %}
 
 #### Models
 
 The models cover groups of components joined together to form a relatively complex and distinct section of an interface.
 
-{% video "siae-design-system-3" "" "Overview of models" %}
+{% video-large "siae-design-system-3" "" "Overview of models" %}
 
 #### Templates
 
 Templates explain how to keep the patterns consistent with the rest of the products and demonstrate the critical templates used in SIAE services.
 
-{% video "siae-design-system-4" "" "Overview of SaaS templates" %}
-{% video "siae-design-system-5" "" "Overview of generic page templates" %}
+{% video-large "siae-design-system-4" "" "Overview of SaaS templates" %}
+{% video-large "siae-design-system-5" "" "Overview of generic page templates" %}
 
 ## Implementation & Timeline
 

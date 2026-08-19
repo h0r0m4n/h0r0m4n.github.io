@@ -96,7 +96,7 @@ Thanks to the set of technologies such as WebVR API and three.js and the automat
 
 {% image-big "src/static/work/aeon-vr-7.png" "" "" %}
 
-{% video "aeon-vr-1" "autoplay" "" %}
+{% video-large "aeon-vr-1" "autoplay" "" %}
 
 ## Key Learnings
 

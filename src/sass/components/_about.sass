@@ -4,14 +4,13 @@
 .about
     &__skills
         @include mixins.mq-small
-            display: flex
-            flex-direction: row
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
             gap: var(--size-l)
         &__group
-            @include mixins.mq-small
-                flex: 1
             ul
                 padding-inline-start: var(--size-m)
+                margin-bottom: 0
             li
                 font-size: 0.825em
                 &::marker
