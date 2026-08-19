@@ -4,12 +4,12 @@
 .about
     &__skills
         @include mixins.mq-small
-            display: flex
-            flex-direction: row
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
             gap: var(--size-l)
         &__group
             @include mixins.mq-small
-                flex: 1
+                // No flex property needed for grid
             ul
                 padding-inline-start: var(--size-m)
             li
