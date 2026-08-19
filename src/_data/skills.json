@@ -32,9 +32,16 @@
             "CSS, Sass, & SCSS",
             "JavaScript & React",
             "WCAG",
-            "Storybook",
-            "LLMs & Agentic Workflows",
-            "Model Context Protocol (MCP)"
+            "Storybook"
 	    ]
+    },
+    {
+        "title": "Artificial Intelligence",
+        "body": [
+            "LLMs & Agentic Workflows",
+            "Model Context Protocol (MCP)",
+            "Generative AI for Design",
+            "Prompt Engineering"
+        ]
     }
 ]
