@@ -1,5 +1,5 @@
 [
-	{
+    {
         "title": "Design",
         "body": [
             "Design Strategy",
@@ -11,7 +11,7 @@
             "Icon Design",
             "Mobile Design",
             "Low & High-fi prototyping"
-	    ]
+        ]
     },
     {
         "title": "Methods",
@@ -23,7 +23,7 @@
             "Hot Potato Process",
             "SAFe, Agile, & Scrum",
             "Technical Writing"
-	    ]
+        ]
     },
     {
         "title": "Development",
@@ -33,7 +33,7 @@
             "JavaScript & React",
             "WCAG",
             "Storybook"
-	    ]
+        ]
     },
     {
         "title": "Artificial Intelligence",

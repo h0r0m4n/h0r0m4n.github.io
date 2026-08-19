@@ -8,10 +8,9 @@
             grid-template-columns: repeat(2, 1fr)
             gap: var(--size-l)
         &__group
-            @include mixins.mq-small
-                // No flex property needed for grid
             ul
                 padding-inline-start: var(--size-m)
+                margin-bottom: 0
             li
                 font-size: 0.825em
                 &::marker
