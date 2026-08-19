@@ -39,7 +39,7 @@
         "title": "Artificial Intelligence",
         "body": [
             "LLMs & Agentic Workflows",
-            "Model Context Protocol (MCP)",
+            "MCP Integrations (Storybook, Chrome DevTools, Miro, Figma)",
             "Generative AI for Design",
             "Prompt Engineering"
         ]
