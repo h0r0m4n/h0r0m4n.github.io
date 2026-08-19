@@ -97,21 +97,21 @@ During research with our engineers and established some extraordinary data that 
 
 Since the project had a small deadline we had to do two major releases. The first release was required to get exclusive invitations and a personal free pass to spend an entire day at Euroshop. So that potential consumers could be part of the project right away.
 
-{% video "cefla-euroshop-1" "Initial prototype of booking the event during the first release" %}
+{% video-large "cefla-euroshop-1" "Initial prototype of booking the event during the first release" %}
 
 ### Second release
 
 The second release offered a complete shopping experience:
 
 {% image-big "src/static/work/cefla-euroshop-3.jpg" "" "" %}
-{% video "cefla-euroshop-2" "" "An overview of final product" %}
+{% video-large "cefla-euroshop-2" "" "An overview of final product" %}
 
 ### Support area
 
 Support area for app provides the “admin-level” to support teams with allows to view and edit subscribed users to the product. One of the main features in-app was to be able to filter people labeled as "VIP":
 
 {% image-big "src/static/work/cefla-euroshop-4.jpg" "" "" %}
-{% video "cefla-euroshop-3" "" "Prototype of schedule and appointments" %}
+{% video-large "cefla-euroshop-3" "" "Prototype of schedule and appointments" %}
 
 ## Timeline & Results
 

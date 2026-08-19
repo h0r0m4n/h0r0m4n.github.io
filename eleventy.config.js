@@ -97,10 +97,23 @@ export default function (eleventyConfig) {
     eleventyConfig.addShortcode('experience', formatYearsOnly);
 
     // Post video
-    // Usage: {% video "my-video" "My caption…" %}
+    // Usage: {% video "my-video" "autoplay" "My caption…" %}
     eleventyConfig.addShortcode('video', function (src, autoplay, caption) {
         return outdent`
             <figure>
+                <video width="960" height="540" controls muted ${autoplay ? `autoplay` : ``} playsinline disablePictureInPicture>
+                    <source src="/static/work/${src}.mp4" type="video/mp4">
+                </video>
+                ${caption ? `<figcaption class="t__container">${caption}</figcaption>` : ''}
+            </figure>
+        `;
+    });
+
+    // Post video large
+    // Usage: {% video-large "my-video" "autoplay" "My caption…" %}
+    eleventyConfig.addShortcode('video-large', function (src, autoplay, caption) {
+        return outdent`
+            <figure class="large">
                 <video width="960" height="540" controls muted ${autoplay ? `autoplay` : ``} playsinline disablePictureInPicture>
                     <source src="/static/work/${src}.mp4" type="video/mp4">
                 </video>
@@ -123,7 +136,7 @@ export default function (eleventyConfig) {
             filenameFormat: function (id, src, width, format, options) {
                 const extension = path.extname(src);
                 const name = path.basename(src, extension);
-                return `${name}-${width}w.${format}`;
+                return `${name}-${id}-${width}w.${format}`;
             },
             urlPath,
             outputDir,
