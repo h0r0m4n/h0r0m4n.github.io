@@ -4,7 +4,7 @@ This file provides context for LLMs (like Gemini, Claude, or ChatGPT) assisting 
 
 ## Overview
 - **Project**: Personal Portfolio Website for Roman Horokhovatskyy (Staff Product Designer at Analog Devices Inc.)
-- **Stack**: Eleventy (11ty) v3+, Node.js (>=18.0.0), Nunjucks, Markdown, and Sass.
+- **Stack**: Eleventy (11ty) v3+, Node.js (>=22.0.0), Nunjucks, Markdown, and Sass.
 - **Goal**: A modern, highly optimized, and visually premium static portfolio site highlighting strategic contributions, AI automation initiatives, and advanced workflows using Figma and AI coding tools.
 
 ## Author's Expertise & Tone
@@ -16,9 +16,9 @@ When generating code, copy, or making architectural decisions, remember that the
 *All generated code should reflect senior-level best practices, and copy should be professional and concise.*
 
 ## Technology Stack & Dependencies
-- **Static Site Generator**: `@11ty/eleventy` (^3.1.5)
+- **Static Site Generator**: `@11ty/eleventy` (^3.1.6)
 - **Templating**: Nunjucks (`.njk`) for layouts and components; Markdown (`.md`) for content (case studies).
-- **Styling**: Sass (`sass` ^1.83.0), utilizing the modern `@use` module system. Compiled via Dart Sass.
+- **Styling**: Sass (`sass` ^1.103.1), utilizing the modern `@use` module system. Compiled via Dart Sass.
 - **Image Optimization**: `@11ty/eleventy-img` for automatically generating responsive images (AVIF, WebP, JPEG) at multiple widths.
 - **Build Tools**: `npm-run-all2` for parallel and sequential task execution.
 
@@ -31,10 +31,10 @@ When generating code, copy, or making architectural decisions, remember that the
   - `static/` - Static assets copied directly to `dist/` (fonts, raw assets, small videos).
   - `work/` - Markdown files for case studies, grouped into subdirectories by year (e.g., `2018`, `2021`). These form the `work` collection.
 - `dist/` - The compiled output directory (generated after build, git-ignored).
-- `.eleventy.js` - The core configuration file defining collections, shortcodes, filters, and passthrough file copying.
+- `eleventy.config.js` - The core configuration file defining collections, shortcodes, filters, and passthrough file copying.
 
 ## Custom Shortcodes (Nunjucks/Markdown)
-The `.eleventy.js` config provides several custom shortcodes heavily used throughout the site:
+The `eleventy.config.js` config provides several custom shortcodes heavily used throughout the site:
 - **Media**: `{% video %}`, `{% image %}`, `{% image-big %}`, `{% carousel %}`, `{% thumbnail %}`, `{% lightbox %}`, `{% book %}`, `{% testimonial %}`.
   *(Note: Many of these are async shortcodes leveraging `eleventy-img` to dynamically generate responsive `<picture>` markup).*
 - **Utility**: `{% stats %}` (for rendering project metadata blocks), `{% year %}` (current year), `{% experienceYears %}` (calculates years of experience from a start date).
