@@ -1,22 +1,26 @@
 [
   {
+    "title": "Omarchy",
+    "link": "https://omarchy.org"
+  },
+  {
     "title": "Claude Code",
     "link": "https://claude.com/product/claude-code"
   },
   {
-    "title": "Cursor",
-    "link": "https://cursor.com"
+    "title": "VSCode",
+    "link": "https://code.visualstudio.com"
   },
   {
     "title": "Figma",
     "link": "https://figma.com"
   },
   {
-    "title": "Notion",
-    "link": "https://www.notion.so"
+    "title": "SiYuan",
+    "link": "https://b3log.org/siyuan"
   },
   {
-    "title": "Slack",
-    "link": "https://slack.com"
+    "title": "Campfire",
+    "link": "https://once.com/campfire"
   }
 ]
