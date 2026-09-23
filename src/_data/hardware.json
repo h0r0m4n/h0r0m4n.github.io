@@ -16,8 +16,8 @@
       "category": "Keyboard"
     },
     {
-      "title": "Logitech MX Master 3",
-      "link": "https://www.logitech.com/shop/p/mx-master-3s",
+      "title": "Logitech MX Master 4",
+      "link": "https://www.logitech.com/shop/p/mx-master-4",
       "category": "Mouse"
     },
     {
@@ -55,18 +55,21 @@
   ],
   "home": [
     {
-      "title": "Framework Laptop 13 Pro",
+      "title": "Lenovo Legion 7a 15\" (2026)",
       "category": "Laptop",
-      "link": "https://frame.work/",
+      "link": "https://www.lenovo.com/legion",
       "components": [
         {
-          "title": "AMD Ryzen™ AI 9 HX 370"
+          "title": "AMD Ryzen™ AI Max+ 392"
         },
         {
-          "title": "Crucial DDR5 16GB x2 5600 SODIMM"
+          "title": "64GB LPDDR5X-8000 RAM"
         },
         {
-          "title": "Crucial P310 1TB PCIe 4.0"
+          "title": "1TB PCIe NVMe SSD"
+        },
+        {
+          "title": "2TB PCIe NVMe SSD (Secondary)"
         }
       ]
     },
