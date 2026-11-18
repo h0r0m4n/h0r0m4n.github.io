@@ -8,6 +8,13 @@
     &__card
         padding-top: 0
 
+        &:has(.t__card__link:focus-visible)
+            outline: 4px solid var(--color-secondary)
+            outline-offset: 4px
+
+            .t__card__link:focus-visible
+                outline: none
+
         .t__card__title
             text-wrap: balance
             a
