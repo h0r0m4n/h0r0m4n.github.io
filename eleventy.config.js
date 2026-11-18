@@ -29,6 +29,13 @@ export default function (eleventyConfig) {
         return collectionApi.getFilteredByGlob('src/work/**/*.md').reverse();
     });
 
+    eleventyConfig.addCollection('blog', function (collectionApi) {
+        return collectionApi
+            .getFilteredByGlob('src/blog/**/*.md')
+            .filter(item => item.data.permalink !== false && !item.data.draft)
+            .sort((a, b) => b.date - a.date);
+    });
+
     // Get the first `n` elements of a collection
     eleventyConfig.addFilter('head', (array, n) => {
         if (n < 0) {
@@ -50,6 +57,14 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addFilter('year', dateObj => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).get('year');
+    });
+
+    eleventyConfig.addFilter('readableDate', dateObj => {
+        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('LLLL d, yyyy');
+    });
+
+    eleventyConfig.addFilter('isoDate', dateObj => {
+        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISODate();
     });
 
     // Stats short-code

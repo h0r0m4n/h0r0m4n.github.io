@@ -1,0 +1,73 @@
+@use "../mixins"
+@use "../vars"
+
+.blog
+    &__list
+        margin-top: var(--size-l)
+
+    &__card
+        padding-top: 0
+
+        .t__card__title
+            text-wrap: balance
+            a
+                &:hover, &:focus-visible
+                    color: var(--color-secondary)
+
+        .t__card__desc
+            font-size: 0.9em
+            margin-top: var(--size-xs)
+            margin-bottom: var(--size-s)
+            text-wrap: pretty
+
+        .t__stats
+            margin: var(--size-xs) 0 0
+
+    &__empty
+        color: var(--color-neutral-1)
+        margin-top: var(--size-l)
+
+.post
+    &__heading
+        h1
+            text-wrap: balance
+
+    &__content
+        p, blockquote
+            text-wrap: pretty
+
+        blockquote
+            margin: var(--size-l) 0
+            padding: var(--size-s) var(--size-m)
+            border-inline-start: 4px solid var(--color-tertiary)
+            background-color: var(--color-neutral-4)
+            border-radius: 0 var(--radius-1) var(--radius-1) 0
+            p
+                margin: 0
+                & + p
+                    margin-top: var(--size-s)
+
+        :not(pre) > code
+            font-family: var(--code-font-family)
+            font-size: 0.875em
+            padding: 0.125em 0.375em
+            background-color: var(--color-neutral-4)
+            border: 1px solid var(--color-neutral-3)
+            border-radius: var(--radius-1)
+            color: var(--color-primary)
+
+        pre[class*="language-"]
+            @media (prefers-color-scheme: light)
+                background-color: #1a1626
+
+.post-meta
+    &__grid
+        display: flex
+        flex-wrap: wrap
+        gap: var(--size-m) var(--size-xl)
+
+        h2
+            margin-top: 0
+
+        p
+            margin: var(--size-xs) 0 0

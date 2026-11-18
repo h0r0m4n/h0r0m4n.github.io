@@ -1,0 +1,12 @@
+{% if date %}
+    <section id="work-meta" class="t__section post-meta" aria-label="Article details">
+        <div class="t__container">
+            <div class="post-meta__grid">
+                <div id="post-date">
+                    <h2 class="h6">Published</h2>
+                    <p><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

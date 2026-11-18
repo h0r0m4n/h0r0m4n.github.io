@@ -7,6 +7,7 @@
     var body = document.body;
     var passwordHash = body.dataset.pwdHash || '';
     var isWorkPage = body.dataset.pageType === 'work';
+    var isBlogPage = body.dataset.pageType === 'blog';
     var isProjectsPage = body.dataset.pageType === 'projects';
     var siteUrl = body.dataset.siteUrl || '';
 
@@ -78,8 +79,8 @@
     }
 
     document.addEventListener('click', function (event) {
-        // Only for links with specific class
-        if (!event.target.matches('.t__card__link')) return;
+        // Only for links with specific class (skip public blog links)
+        if (!event.target.matches('.t__card__link') || event.target.dataset.public === 'true') return;
 
         // Verify properly using Hash matching
         if (localStorage.getItem(featuredWork) !== passwordHash) {
@@ -158,7 +159,7 @@
     }
 
     // ---- Lightbox configs (Fancybox) ----
-    if ((isProjectsPage || isWorkPage) && typeof Fancybox !== 'undefined') {
+    if ((isProjectsPage || isWorkPage || isBlogPage) && typeof Fancybox !== 'undefined') {
         Fancybox.bind('[data-fancybox]', {
             contentClick: false,
             Thumbs: {
@@ -175,7 +176,7 @@
     }
 
     // ---- Carousel configs ----
-    if (isWorkPage && typeof Carousel !== 'undefined') {
+    if ((isWorkPage || isBlogPage) && typeof Carousel !== 'undefined') {
         document.querySelectorAll('.f-carousel').forEach(function(carousel) {
             var options = {
                 infinite: false,

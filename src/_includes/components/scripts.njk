@@ -1,8 +1,8 @@
-{% if page.url == '/projects/' or type == 'work' %}
+{% if page.url == '/projects/' or type == 'work' or type == 'blog' %}
     <script src="{{ '/js/fancybox.js' | url }}?v={{ site.version }}" defer></script>
 {% endif %}
 
-{% if type == 'work' %}
+{% if type == 'work' or type == 'blog' %}
     <script src="{{ '/js/carousel.js' | url }}?v={{ site.version }}" defer></script>
 {% endif %}
 

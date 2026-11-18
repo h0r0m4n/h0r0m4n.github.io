@@ -1,0 +1,50 @@
+---
+layout: layouts/base
+title: Blog
+description: Thoughts, notes, and articles on product design, systems thinking, workflows, and technology.
+permalink: "/{{ page.fileSlug }}/index.html"
+---
+{% include 'components/intro.njk' %}
+
+<main>
+    <section id="blog" class="blog t__section">
+        <div class="t__container">
+            <h2>Blog</h2>
+            <p class="t__lead">Thoughts, notes, and articles on product design, systems thinking, workflows, and technology.</p>
+
+            {% if collections.blog and collections.blog.length %}
+                <ol class="t__grid t__grid--bits blog__list">
+                    {% for post in collections.blog %}
+                        <li class="t__grid__item">
+                            <article class="t__card t__card--bits t__card--interactive blog__card t__hover t__hover--2">
+                                <header class="t__card__header">
+                                    <h3 class="t__card__title h4">
+                                        <a class="t__card__link" data-public="true" href="{{ post.url | url }}" rel="bookmark">{{ post.data.title }}</a>
+                                    </h3>
+                                    {% if post.data.category %}
+                                        <p class="t__card__client">{{ post.data.category }}</p>
+                                    {% endif %}
+                                    {% if post.data.description %}
+                                        <p class="t__card__desc">{{ post.data.description }}</p>
+                                    {% endif %}
+                                    {% if post.date %}
+                                        <ul class="t__stats">
+                                            <li><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></li>
+                                        </ul>
+                                    {% endif %}
+                                </header>
+                                {% if post.data.thumbnail %}
+                                    {% thumbnail post.data.thumbnail, post.data.title, post.data.thumbnailRatio or '16-10' %}
+                                {% endif %}
+                            </article>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                <p class="blog__empty">No articles published yet. Check back soon.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% include 'components/contact.njk' %}
+</main>

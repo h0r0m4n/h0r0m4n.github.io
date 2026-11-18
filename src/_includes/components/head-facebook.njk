@@ -1,7 +1,7 @@
 <meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{% if type == 'blog' %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if title%}{{ site.title }} — {{ title }}{% else %}{{ site.title }}{% endif %}">
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:url" content="{{ site.url | url }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.author }}">
 <meta property="og:image" content="{{ site.url + '/static/preview.jpg' | url }}">

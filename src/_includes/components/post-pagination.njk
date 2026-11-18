@@ -1,0 +1,33 @@
+{% set nextPost = collections.blog | getNextCollectionItem(page) %}
+{% if not nextPost and collections.blog.length > 1 %}
+    {% set nextPost = collections.blog[0] %}
+{% endif %}
+{% if nextPost %}
+<nav id="work-pagination" class="t__section" aria-label="Read next">
+    <div class="t__container">
+        <h2 class="h1">Read next</h2>
+        <ul class="t__grid t__grid--pagination">
+            <li class="t__grid__item">
+                <article class="t__card t__card--bits t__card--interactive blog__card t__hover t__hover--2">
+                    <header class="t__card__header">
+                        <h3 class="t__card__title h4">
+                            <a class="t__card__link" data-public="true" href="{{ nextPost.url | url }}" rel="bookmark">{{ nextPost.data.title }}</a>
+                        </h3>
+                        {% if nextPost.data.category %}
+                            <p class="t__card__client">{{ nextPost.data.category }}</p>
+                        {% endif %}
+                        {% if nextPost.data.description %}
+                            <p class="t__card__desc">{{ nextPost.data.description }}</p>
+                        {% endif %}
+                        {% if nextPost.date %}
+                            <ul class="t__stats">
+                                <li><time datetime="{{ nextPost.date | isoDate }}">{{ nextPost.date | readableDate }}</time></li>
+                            </ul>
+                        {% endif %}
+                    </header>
+                </article>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endif %}

@@ -1,0 +1,28 @@
+---
+layout: layouts/base
+permalink: "/blog/{{ page.fileSlug }}/index.html"
+---
+{% include 'components/intro.njk' %}
+<main>
+    <article class="post">
+        <header id="work-heading" class="t__section post__heading">
+            <div class="t__container">
+                {% if category %}
+                    <strong>{{ category }}</strong>
+                {% endif %}
+                <h1>{{ title }}</h1>
+                {% if description %}
+                    <p class="t__lead">{{ description }}</p>
+                {% endif %}
+            </div>
+        </header>
+        {% include 'components/post-meta.njk' %}
+        <div id="work-content" class="t__section post__content">
+            <div class="t__container">
+                {{ content | safe }}
+            </div>
+        </div>
+        {% include 'components/post-pagination.njk' %}
+        {% include 'components/contact.njk' %}
+    </article>
+</main>

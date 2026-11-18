@@ -29,11 +29,11 @@
 
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}?v={{ site.version }}">
 
-{% if page.url == '/projects/' or type == 'work' %}
+{% if page.url == '/projects/' or type == 'work' or type == 'blog' %}
     <link rel="stylesheet" href="{{ '/css/fancybox.css' | url }}?v={{ site.version }}">
 {% endif %}
 
-{% if type == 'work' %}
+{% if type == 'work' or type == 'blog' %}
     <link rel="stylesheet" href="{{ '/css/carousel.css' | url }}?v={{ site.version }}">
 {% endif %}
 
