@@ -24,9 +24,6 @@ permalink: "/{{ page.fileSlug }}/index.html"
                                     {% if post.data.category %}
                                         <p class="t__card__client">{{ post.data.category }}</p>
                                     {% endif %}
-                                    {% if post.data.description %}
-                                        <p class="t__card__desc">{{ post.data.description }}</p>
-                                    {% endif %}
                                     {% if post.date %}
                                         <ul class="t__stats">
                                             <li><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></li>

@@ -16,9 +16,6 @@
                         {% if nextPost.data.category %}
                             <p class="t__card__client">{{ nextPost.data.category }}</p>
                         {% endif %}
-                        {% if nextPost.data.description %}
-                            <p class="t__card__desc">{{ nextPost.data.description }}</p>
-                        {% endif %}
                         {% if nextPost.date %}
                             <ul class="t__stats">
                                 <li><time datetime="{{ nextPost.date | isoDate }}">{{ nextPost.date | readableDate }}</time></li>
