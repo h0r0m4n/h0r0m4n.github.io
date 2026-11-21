@@ -1,7 +1,7 @@
 ---
 title: First impressions with the iPhone 3GS and the mobile web
 description: After using my first iPhone for a few weeks, from Skype and Maps to Safari, I think mobile interfaces are the future, even if the mobile web right now is in pretty bad shape.
-category: Mobile Design
+category: Design
 date: 2009-09-18
 ---
 

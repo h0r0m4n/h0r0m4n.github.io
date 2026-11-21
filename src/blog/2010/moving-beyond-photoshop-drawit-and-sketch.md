@@ -1,7 +1,7 @@
 ---
 title: Rethinking web design tools, from Photoshop to DrawIt and Sketch
 description: After years of designing websites in Photoshop and Illustrator, the shift to @2x Retina screens makes heavy Adobe tools feel even more outdated. Native Mac apps like DrawIt and the new Sketch look like the future.
-category: Design Tools
+category: Design
 date: 2010-10-14
 ---
 
