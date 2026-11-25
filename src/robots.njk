@@ -1,3 +1,7 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
 # Block AI Scrapers
 User-agent: GPTBot
 Disallow: /
@@ -47,5 +51,11 @@ Disallow: /
 User-agent: amazon-QBot
 Disallow: /
 
+# Allow Search Engines (except NDA case studies)
 User-agent: *
-Disallow: /
+Allow: /
+{%- for work in collections.work | permalinkNotFalse %}
+Disallow: {{ work.url }}
+{%- endfor %}
+
+Sitemap: {{ site.url }}/sitemap.xml

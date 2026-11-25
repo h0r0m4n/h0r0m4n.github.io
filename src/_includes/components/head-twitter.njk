@@ -1,7 +1,7 @@
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@{{ site.nickname }}">
 <meta name="twitter:creator" content="@{{ site.nickname }}">
-<meta name="twitter:title" property="og:title" content="{% if title%}{{ site.title }} — {{ title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:url" property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta name="twitter:image" property="og:image" content="{{ site.url + '/static/preview.jpg' | url }}">
+<meta name="twitter:title" content="{% if title %}{% if client %}{{ client }} {% endif %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:image" content="{{ site.url + '/static/preview.jpg' | url }}">

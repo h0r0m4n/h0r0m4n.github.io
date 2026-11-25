@@ -8,12 +8,21 @@
                 </div>
             </figure>
         {% endif %}
-        <h1 class="intro__logo">
-            <a href="/">
-                <span class="t__vh">{{ site.author }}</span>
-                {% include 'assets/logo.svg' %}
-            </a>
-        </h1>
+        {% if page.url == '/' %}
+            <h1 class="intro__logo">
+                <a href="/">
+                    <span class="t__vh">{{ site.author }}</span>
+                    {% include 'assets/logo.svg' %}
+                </a>
+            </h1>
+        {% else %}
+            <div class="intro__logo">
+                <a href="/">
+                    <span class="t__vh">{{ site.author }}</span>
+                    {% include 'assets/logo.svg' %}
+                </a>
+            </div>
+        {% endif %}
         <nav class="intro__nav">
             <ul>
                 <li>

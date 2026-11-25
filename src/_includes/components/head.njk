@@ -3,7 +3,11 @@
 <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="keywords" content="{{ site.keywords }}">
 <meta name="author" content="{{ site.author }}">
-<meta name="robots" content="noarchive, notranslate, nositelinkssearchbox, nosnippet, noimageindex, noai, noimageai">
+{% if type == 'work' or page.url == '/404.html' %}
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+{% else %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{% endif %}
 <meta name="ai-exclusion" content="true">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="horoman.com">
@@ -14,9 +18,50 @@
 {% include 'components/head-twitter.njk' %}
 {% include 'components/head-facebook.njk' %}
 
-<title>{% if title%}{{ site.title }} — {% if client %}{{ client }} {% endif %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
+<title>{% if title %}{% if client %}{{ client }} {% endif %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} — Blog" href="{{ site.url }}/feed.xml">
+
+{% if type == 'blog' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ (description or site.description) | dump | safe }},
+    "image": {{ (site.url + '/static/preview.jpg') | dump | safe }},
+    "datePublished": {{ (date | isoDate) | dump | safe }},
+    "author": {
+        "@type": "Person",
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    },
+    {% if category %}"articleSection": {{ category | dump | safe }},{% endif %}
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ (site.url + page.url) | dump | safe }}
+    }
+}
+</script>
+{% elif page.url == '/' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.author | dump | safe }},
+    "url": {{ site.url | dump | safe }},
+    "jobTitle": "Staff Product Designer",
+    "description": {{ site.description | dump | safe }}{% if social %},
+    "sameAs": [{% for item in social %}{{ item.link | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
+}
+</script>
+{% endif %}
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url + '/apple-touch-icon.png' | url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url + '/favicon-32x32.png' | url }}">

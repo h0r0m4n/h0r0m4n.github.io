@@ -14,9 +14,9 @@ export default function (eleventyConfig) {
         { "src/static/work/*.mp4": "/static/work" },
         { "src/static/testimonials": "/static/testimonials" },
         { "src/static/books": "/static/books" },
+        { "src/static/preview.jpg": "/static/preview.jpg" },
         "src/*.{png,svg,ico}",
         "src/site.webmanifest",
-        "src/robots.txt",
         "src/CNAME"
     ];
     passthroughCopies.forEach(copy => eleventyConfig.addPassthroughCopy(copy));
@@ -65,6 +65,10 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addFilter('isoDate', dateObj => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISODate();
+    });
+
+    eleventyConfig.addFilter('rssDate', dateObj => {
+        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toRFC2822();
     });
 
     // Stats short-code

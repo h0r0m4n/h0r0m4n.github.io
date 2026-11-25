@@ -9,7 +9,7 @@
                     <article class="t__card t__card--interactive t__hover t__hover--2">
                         <header class="t__card__header">
                             <h3 class="t__card__title h4">
-                                <a class="t__card__link" href="{{ work.url | url }}" rel="bookmark" target="_parent" title="Open '{{ work.data.client }} {{ work.data.title }}' case study">{{ work.data.title }}</a>
+                                <a class="t__card__link" href="{{ work.url | url }}" rel="bookmark nofollow" target="_parent" title="Open '{{ work.data.client }} {{ work.data.title }}' case study">{{ work.data.title }}</a>
                             </h3>
                             {% if work.data.client %}
                                 <p class="t__card__client">{{ work.data.client }}</p>
