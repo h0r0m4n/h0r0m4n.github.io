@@ -1,6 +1,11 @@
 <section id="works" class="works t__section">
     <div class="t__container">
-        <h2 class="t__typedivider">Case studies</h2>
+        {% if page.url == '/case-studies/' %}
+            <h1 class="h2">Case studies</h1>
+            <p class="t__lead">Selected in-depth case studies covering Design Systems, UX/UI, and digital products.</p>
+        {% else %}
+            <h2 class="t__typedivider">Case studies</h2>
+        {% endif %}
     </div>
     <ol class="t__grid t__grid--works">
         {% for work in collections.work %}

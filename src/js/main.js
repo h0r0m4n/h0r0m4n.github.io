@@ -79,8 +79,9 @@
     }
 
     document.addEventListener('click', function (event) {
-        // Only for links with specific class (skip public blog links)
-        if (!event.target.matches('.t__card__link') || event.target.dataset.public === 'true') return;
+        var link = event.target.closest('a[data-protected="true"], .t__card__link');
+        // Only for protected links (skip public blog links)
+        if (!link || link.dataset.public === 'true') return;
 
         // Verify properly using Hash matching
         if (localStorage.getItem(featuredWork) !== passwordHash) {
@@ -92,20 +93,24 @@
             event.preventDefault();
 
             // Save the URL dynamically based on current event
-            featuredUrl = event.target.href;
+            featuredUrl = link.href;
         }
     }, false);
 
-    // If the user access `?pwd=...` url don't require password anymore
-    var queryString = window.location.search;
-    if (queryString === '?pwd=' + atob(passwordHash)) {
+    // If the user accesses `?pwd=...` (e.g. from CV), unlock and strip pwd from URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('pwd') === atob(passwordHash)) {
         localStorage.setItem(featuredWork, passwordHash);
+        urlParams.delete('pwd');
+        var cleanSearch = urlParams.toString();
+        var cleanUrl = window.location.pathname + (cleanSearch ? '?' + cleanSearch : '') + window.location.hash;
+        window.history.replaceState('', document.title, cleanUrl);
     }
 
     // STRICT verify: If the local storage value is different redirect to the homepage natively.
     if (isWorkPage) {
         if (localStorage.getItem(featuredWork) !== passwordHash) {
-            location.href = siteUrl;
+            window.location.replace(window.location.origin + '/');
         }
     }
 

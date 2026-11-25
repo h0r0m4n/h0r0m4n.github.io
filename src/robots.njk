@@ -54,8 +54,6 @@ Disallow: /
 # Allow Search Engines (except NDA case studies)
 User-agent: *
 Allow: /
-{%- for work in collections.work | permalinkNotFalse %}
-Disallow: {{ work.url }}
-{%- endfor %}
+Disallow: /case-studies/
 
 Sitemap: {{ site.url }}/sitemap.xml

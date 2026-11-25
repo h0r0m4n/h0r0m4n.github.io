@@ -29,7 +29,7 @@
                     <a href="/" class="intro__nav-link {% if page.url == '/' %}intro__nav-link--active{% endif %}">Home</a>
                 </li>
                 <li>
-                    <a href="/#works" class="intro__nav-link {% if type == 'work' %}intro__nav-link--active{% endif %}">Case studies</a>
+                    <a href="/case-studies/" data-protected="true" rel="nofollow" class="intro__nav-link {% if page.url == '/case-studies/' or type == 'work' %}intro__nav-link--active{% endif %}">Case studies</a>
                     <span>&</span>
                     <a href="/projects/" class="intro__nav-link {% if page.url == '/projects/' %}intro__nav-link--active{% endif %}">
                         Projects</a>

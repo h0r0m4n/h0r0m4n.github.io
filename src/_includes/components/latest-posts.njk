@@ -1,0 +1,31 @@
+{% if collections.blog and collections.blog.length %}
+    <section id="latest-posts" class="blog t__section">
+        <div class="t__container">
+            <h2 class="t__typedivider">Latest articles</h2>
+            <ol class="t__grid t__grid--bits blog__list">
+                {% for post in collections.blog | head(3) %}
+                    <li class="t__grid__item">
+                        <article class="t__card t__card--bits t__card--interactive blog__card t__hover t__hover--2">
+                            <header class="t__card__header">
+                                <h3 class="t__card__title h4">
+                                    <a class="t__card__link" data-public="true" href="{{ post.url | url }}" rel="bookmark">{{ post.data.title }}</a>
+                                </h3>
+                                {% if post.data.category %}
+                                    <p class="t__card__client">{{ post.data.category }}</p>
+                                {% endif %}
+                                {% if post.date %}
+                                    <ul class="t__stats">
+                                        <li><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></li>
+                                    </ul>
+                                {% endif %}
+                            </header>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ol>
+            <p class="blog__more">
+                <a href="/blog/">View all articles →</a>
+            </p>
+        </div>
+    </section>
+{% endif %}
