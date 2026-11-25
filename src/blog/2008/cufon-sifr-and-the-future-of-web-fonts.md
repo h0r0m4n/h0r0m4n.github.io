@@ -7,7 +7,7 @@ date: 2008-11-24
 
 Every web designer knows how frustrating it is to be stuck with the same few web-safe fonts. Arial, Georgia, Verdana, Helvetica, Times New Roman. Year after year our layouts get better, while typography on the web feels basically the same as ten years ago.
 
-Because of this limit, people came up with all kind of tricks to replace HTML text with custom fonts. First it was image replacement with PNGs, then sIFR (which replaces headings with small Flash movies), and lately Cufon, that draws letters using JavaScript with `<canvas>` and VML. I understand why designers get excited about them, because screenshots look much closer to print design.
+Because of this limit, people came up with all kind of tricks to replace HTML text with custom fonts. First it was image replacement with PNGs, then [sIFR](http://www.mikeindustries.com/blog/sifr/) (which replaces headings with small Flash movies), and lately [Cufon](https://cufon.shoqolate.com/), that draws letters using JavaScript with `<canvas>` and VML. I understand why designers get excited about them, because screenshots look much closer to print design.
 
 Still, I think both sIFR and Cufon are bad for accessibility and push the web in the wrong direction.
 
@@ -25,7 +25,7 @@ I don't think good visual design should mean breaking basic things like selectin
 
 ## Web font standards and licenses have to change
 
-The funny part is that CSS already has `@font-face` in the spec for years:
+The funny part is that CSS already has [`@font-face` in the spec](https://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html) for years:
 
 ```css
 @font-face {
@@ -38,7 +38,7 @@ h1 {
 }
 ```
 
-Safari 3.1 already proved this year that native `@font-face` with real OpenType and TrueType fonts works cleanly. Text stays real text, fast and accessible, with zero JavaScript hacks or Flash plugins. Now other browsers need to support it in a consistent way instead of sticking to proprietary stuff like EOT in Internet Explorer.
+Safari 3.1 already proved this year that [native `@font-face`](https://webkit.org/blog/124/downloadable-fonts/) with real OpenType and TrueType fonts works cleanly. Text stays real text, fast and accessible, with zero JavaScript hacks or Flash plugins. Now other browsers need to support it in a consistent way instead of sticking to proprietary stuff like [EOT](https://www.w3.org/Submission/EOT/) in Internet Explorer.
 
 Even more important than browsers, though, is the license problem.
 

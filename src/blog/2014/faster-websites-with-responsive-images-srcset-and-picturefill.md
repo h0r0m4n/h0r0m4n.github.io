@@ -25,9 +25,9 @@ Think about a simple hero image: a large desktop JPEG at 1800px might easily wei
 
 ## Picturefill and the new `<picture>` and `srcset` standards
 
-For a long time we didn't have a real standard in HTML to tell the browser which image file to download. That is why **Picturefill**, created by Scott Jehl of Filament Group back in 2012, became such an important tool for frontend developers.
+For a long time we didn't have a real standard in HTML to tell the browser which image file to download. That is why [Picturefill](https://scottjehl.github.io/picturefill/), created by [Scott Jehl](https://scottjehl.com/) of [Filament Group](https://www.filamentgroup.com/) back in 2012, became such an important tool for frontend developers.
 
-The first version of Picturefill used custom `<span data-picture>` markup as a temporary workaround while the Responsive Images Community Group worked on a real spec. Earlier this year though, Filament Group released **Picturefill 2.0**, which uses the real native `<picture>`, `srcset` and `sizes` syntax.
+The first version of Picturefill used custom `<span data-picture>` markup as a temporary workaround while the [Responsive Images Community Group](https://responsiveimages.org/) worked on a real spec. Earlier this year though, Filament Group released [Picturefill 2.0](https://github.com/scottjehl/picturefill/releases/tag/2.0.0), which uses the real native `<picture>`, `srcset` and `sizes` syntax.
 
 Even better, native browser support is finally starting to land right now. Chrome 38 and Opera 25 just shipped native `<picture>` and `srcset` support last month, and Safari 8 and iOS 8 support `srcset` with density descriptors. For Firefox, Internet Explorer and older browsers, dropping in Picturefill 2.0 lets us use the exact same standard HTML today without waiting years for every browser to catch up.
 
@@ -107,4 +107,4 @@ If the image crop stays the same and only the display width changes with the flu
 
 In this example, on a desktop viewport wider than `60em` the image takes half the screen (`50vw`), while on smaller viewports it takes the full width (`100vw`). The browser combines that with whether the device is `1x`, `1.5x` or `2x` and downloads only the single best file.
 
-Yes, exporting multiple image sizes adds a bit of extra work to the workflow (unless you automate it with Grunt or Gulp tasks or your CMS), and the HTML is definitely more verbose than a plain `<img>` tag. Still, once you test a heavy page on a real 3G connection before and after using `srcset` and Picturefill, it is very hard to go back. Fast websites are simply better websites for everyone.
+Yes, exporting multiple image sizes adds a bit of extra work to the workflow (unless you automate it with [Grunt](https://gruntjs.com/) or [Gulp](https://gulpjs.com/) tasks or your CMS), and the HTML is definitely more verbose than a plain `<img>` tag. Still, once you test a heavy page on a real 3G connection before and after using `srcset` and Picturefill, it is very hard to go back. Fast websites are simply better websites for everyone.

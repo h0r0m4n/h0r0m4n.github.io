@@ -5,11 +5,11 @@ category: Accessibility
 date: 2010-09-01
 ---
 
-My copy of "Introducing HTML5" by Bruce Lawson and Remy Sharp just arrived a few days ago, and reading through it got me genuinely excited about where the web is heading.
+My copy of ["Introducing HTML5"](https://introducinghtml5.com/) by [Bruce Lawson](https://brucelawson.co.uk/) and [Remy Sharp](https://remysharp.com/) just arrived a few days ago, and reading through it got me genuinely excited about where the web is heading.
 
 Back in 2007 [I wrote](/blog/why-i-dont-believe-in-flash/) that I didn't believe in Flash for building websites and that open web standards were the only thing that really made sense long term. At the time, even if you loved standards, you still had to admit that HTML and CSS had big limits when it came to multimedia or richer web apps.
 
-Even though HTML5 is still a W3C Working Draft, a surprising amount of it already works in modern browsers today. What excites me the most is not just the shiny demos, it is how many practical benefits and accessibility improvements we get right out of the box.
+Even though HTML5 is still a [W3C Working Draft](https://www.w3.org/TR/html5/), a surprising amount of it already works in modern browsers today. What excites me the most is not just the shiny demos, it is how many practical benefits and accessibility improvements we get right out of the box.
 
 ## Native video, audio and canvas without Flash
 
@@ -23,7 +23,7 @@ For years, putting a simple video or audio player on a page meant embedding Flas
 </video>
 ```
 
-Even with the current codec split between MP4 (H.264), Ogg and the new WebM format (so you still provide more than one `<source>` file), the advantages are massive right away:
+Even with the current codec split between MP4 (H.264), Ogg and the new [WebM](https://www.webmproject.org/) format (so you still provide more than one `<source>` file), the advantages are massive right away:
 
 - No more Flash plugin crashes taking down the whole browser tab.
 - Closing huge security holes that came from relying on an external binary plugin that needed constant patches.
@@ -84,7 +84,7 @@ I also love the new form input types like `type="email"`, `type="url"`, `type="t
 
 Another huge step forward in HTML5 is that web pages don't have to completely die the second you lose your internet connection, or depend only on tiny cookies to remember state.
 
-With Web Storage (`localStorage` and `sessionStorage`), storing user preferences or draft form data right in the browser takes just a couple of lines of JavaScript, without sending extra data back and forth on every HTTP request like cookies do:
+With [Web Storage](https://www.w3.org/TR/webstorage/) (`localStorage` and `sessionStorage`), storing user preferences or draft form data right in the browser takes just a couple of lines of JavaScript, without sending extra data back and forth on every HTTP request like cookies do:
 
 ```js
 // Save a user preference locally
@@ -96,4 +96,4 @@ var savedTheme = localStorage.getItem('theme');
 
 Combined with the HTML5 Application Cache (`manifest="cache.manifest"`), you can even tell the browser which HTML, CSS, JavaScript and image files to keep locally so a web app or documentation page stays usable while you are offline on a train or on a slow mobile connection.
 
-Of course we still have to deal with older Internet Explorer versions for a while (using small scripts like Remy Sharp's html5shiv for IE), and parts of the spec are still evolving. Still, after reading "Introducing HTML5", this feels like the biggest real upgrade the web has had in years, because it makes websites faster, safer and more accessible by default.
+Of course we still have to deal with older Internet Explorer versions for a while (using small scripts like Remy Sharp's [html5shiv](https://code.google.com/p/html5shiv/) for IE), and parts of the spec are still evolving. Still, after reading "Introducing HTML5", this feels like the biggest real upgrade the web has had in years, because it makes websites faster, safer and more accessible by default.

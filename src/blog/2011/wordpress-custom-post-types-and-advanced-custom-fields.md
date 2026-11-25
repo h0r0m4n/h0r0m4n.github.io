@@ -5,25 +5,25 @@ category: Development
 date: 2011-11-10
 ---
 
-I started working with WordPress back around version 2.6, mostly because there was already a huge demand for it on the market. Clients knew the name, wanted an admin panel they could actually understand, and rarely had the budget for a custom CMS built from scratch.
+I started working with [WordPress](https://wordpress.org/) back around [version 2.6](https://wordpress.org/news/2008/07/wordpress-26/), mostly because there was already a huge demand for it on the market. Clients knew the name, wanted an admin panel they could actually understand, and rarely had the budget for a custom CMS built from scratch.
 
 For a while though, using WordPress for anything more complex than a normal blog or a small brochure site felt a bit forced. You ended up using regular blog categories to fake a portfolio, a team page or an events list, and hoping the client wouldn't mix everything up later.
 
-Things really started to change last year with WordPress 3.0, which finally brought proper Custom Post Types into core. Suddenly you could separate projects, case studies, team members or events cleanly in the sidebar, each with its own templates and URLs.
+Things really started to change last year with [WordPress 3.0](https://wordpress.org/news/2010/06/thelonious/), which finally brought proper [Custom Post Types](https://codex.wordpress.org/Post_Types) into core. Suddenly you could separate projects, case studies, team members or events cleanly in the sidebar, each with its own templates and URLs.
 
 ## The pain of writing custom metaboxes in PHP
 
 Even with Custom Post Types, there was still a big annoying part left: managing structured data.
 
-WordPress has always had default custom fields, of course, but asking a client to manually type key and value pairs into a raw table is a recipe for disaster. One small typo in the field name and nothing shows up on the site.
+WordPress has always had default [custom fields](https://codex.wordpress.org/Custom_Fields), of course, but asking a client to manually type key and value pairs into a raw table is a recipe for disaster. One small typo in the field name and nothing shows up on the site.
 
-So if a project needed structured data like a client name, a release date, a project link or extra image uploads, you had to code heavy custom metaboxes completely by hand in PHP. That meant writing `add_meta_box()`, building all the form markup yourself, adding nonces, hooking into `save_post`, checking autosaves and permissions, sanitizing every value and saving everything with `update_post_meta()`.
+So if a project needed structured data like a client name, a release date, a project link or extra image uploads, you had to code heavy custom metaboxes completely by hand in PHP. That meant writing [`add_meta_box()`](https://codex.wordpress.org/Function_Reference/add_meta_box), building all the form markup yourself, adding nonces, hooking into `save_post`, checking autosaves and permissions, sanitizing every value and saving everything with [`update_post_meta()`](https://codex.wordpress.org/Function_Reference/update_post_meta).
 
 For one simple field it was annoying. For a full client website with twenty different fields across five templates, it meant repeating hundreds of lines of boilerplate code over and over, and most of the time the admin screen still ended up looking messy.
 
 ## How Advanced Custom Fields changed the game
 
-Earlier this year I discovered Advanced Custom Fields (ACF), a plugin created by Elliot Condon, and it honestly changed the rules of the game for me.
+Earlier this year I discovered [Advanced Custom Fields](https://www.advancedcustomfields.com/) (ACF), a plugin created by [Elliot Condon](https://www.elliotcondon.com/), and it honestly changed the rules of the game for me.
 
 Instead of spending hours writing metabox PHP by hand, ACF gives you a really clean and intuitive graphical interface right inside WordPress. You build a field group, pick your field types, set up the location rules to decide where those fields appear (for example only on a "Projects" Custom Post Type, or only on the Homepage template), and you are ready to go.
 

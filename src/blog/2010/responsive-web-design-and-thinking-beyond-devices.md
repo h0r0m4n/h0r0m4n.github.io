@@ -5,15 +5,15 @@ category: Accessibility
 date: 2010-11-18
 ---
 
-Recently I came across an article on A List Apart by Ethan Marcotte called "Responsive Web Design", and honestly it felt like a lightbulb moment.
+Recently I came across an article on [A List Apart](https://alistapart.com/) by [Ethan Marcotte](https://ethanmarcotte.com/) called ["Responsive Web Design"](https://alistapart.com/article/responsive-web-design/), and honestly it felt like a lightbulb moment.
 
 Back last year, after getting my iPhone 3GS, [I wrote](/blog/first-impressions-of-the-iphone-3gs-and-the-mobile-web/) that making a separate mobile site on an `m.` subdomain or building native apps for every platform felt like the wrong long term direction. I kept thinking there had to be a way in web standards to make a single site adapt cleanly to smaller screens.
 
-What Marcotte proposes finally puts all the pieces together in a simple and practical way: combining fluid grids, flexible images and CSS Media Queries so the same website can adapt to whatever screen is viewing it.
+What Marcotte proposes finally puts all the pieces together in a simple and practical way: combining fluid grids, flexible images and [CSS Media Queries](https://www.w3.org/TR/css3-mediaqueries/) so the same website can adapt to whatever screen is viewing it.
 
 ## Not just mobile, tablet and desktop
 
-Now that the iPad is out with Safari on a 9.7-inch screen, we are already dealing with at least three different classes of devices, and more will surely come.
+Now that the [iPad](https://www.apple.com/ipad/) is out with Safari on a 9.7-inch screen, we are already dealing with at least three different classes of devices, and more will surely come.
 
 Still, thinking about this over the past few days, I don't think we should focus too much on fixed labels like "mobile", "tablet" and "desktop". Those buckets already start to fall apart if you look closely.
 
