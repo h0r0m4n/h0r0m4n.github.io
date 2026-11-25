@@ -1,0 +1,81 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.title | safe }}
+
+> {{ site.description | safe }}
+
+- **Role**: Staff Product Designer at [Analog Devices](https://www.analog.com/)
+- **Location**: {{ site.location | safe }}
+- **Experience**: Over {% experienceYears %} (since {{ site.startingYear }})
+- **Website**: {{ site.url }}
+- **Email**: {{ site.mail }}
+- **Social**: {% for item in social %}[{{ item.title | safe }}]({{ item.link }}){% if not loop.last %}, {% endif %}{% endfor %}
+
+---
+
+## About
+
+I am a Staff Product Designer at Analog Devices, working on digital tools for hardware engineering. With over {% experienceYears %} of experience, I focus on simplifying complex systems and building better user experiences for engineers and enterprises.
+
+I combine my background in design and technology to create interfaces that are both functional and visually appealing. My work spans from UI design to frontend development, allowing me to prototype and implement the solutions I design across the entire product lifecycle. Accessibility is a core part of my process.
+
+### Skills
+{% for group in skills %}
+- **{{ group.title | safe }}**: {{ group.body | join(', ') | safe }}
+{%- endfor %}
+
+### Selected Clients
+{% for client in clients %}
+- [{{ client.title | safe }}]({{ client.url }})
+{%- endfor %}
+
+### Testimonials
+{% for item in testimonials %}
+> "{{ item.comment | safe }}"
+> — **{{ item.name | safe }}**, {{ item.role | safe }} at {{ item.company | safe }}
+{% endfor %}
+### Software
+{% for app in software %}
+- [{{ app.title | safe }}]({{ app.link }})
+{%- endfor %}
+
+### Hardware
+{% for category, items in hardware %}{% if items.length %}
+#### {{ category | capitalize }}
+{% for gadget in items %}- {{ gadget.title | safe }}{% if gadget.category %} ({{ gadget.category | safe }}){% endif %}{% if gadget.components %}: {% for comp in gadget.components %}{{ comp.title | safe }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+{% endfor %}{% endif %}{% endfor %}
+### Favorite Readings
+{% for read in reads %}
+- *{{ read.title | safe }}* by {{ read.author | safe }}
+{%- endfor %}
+
+---
+
+## Public Projects Archive
+
+Selected archive of public digital design, UI/UX, data visualization, and web projects ({{ site.url }}/projects/):
+{% for work in collections.work %}{% if work.url == false %}
+- **{{ work.data.title | safe }}**{% if work.data.client %} — {{ work.data.client | safe }}{% endif %}{% if work.data.date %} ({{ work.data.date | year }}){% endif %}{% if work.data.platform %} [{{ work.data.platform | safe }}]{% endif %}{% if work.data.description %}: {{ work.data.description | safe }}{% endif %}
+{%- endif %}{% endfor %}
+
+---
+
+## Blog Articles
+{% for post in collections.blog %}
+### {{ post.data.title | safe }}
+
+- **URL**: {{ site.url }}{{ post.url }}
+- **Date**: {{ post.date | isoDate }}
+{%- if post.data.category %}
+- **Category**: {{ post.data.category | safe }}
+{%- endif %}
+{%- if post.data.description %}
+- **Summary**: {{ post.data.description | safe }}
+{%- endif %}
+
+{{ post.rawInput | trim | safe }}
+
+---
+{% endfor %}

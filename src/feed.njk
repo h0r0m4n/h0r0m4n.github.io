@@ -3,7 +3,7 @@ permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>{{ site.title }} — Blog</title>
         <link>{{ site.url }}/blog/</link>
@@ -23,6 +23,9 @@ eleventyExcludeFromCollections: true
             {%- endif %}
             {%- if post.data.description %}
             <description>{{ post.data.description | escape }}</description>
+            {%- endif %}
+            {%- if post.templateContent %}
+            <content:encoded><![CDATA[{{ post.templateContent | replace(']]>', ']]]]><![CDATA[>') | safe }}]]></content:encoded>
             {%- endif %}
         </item>
         {%- endfor %}

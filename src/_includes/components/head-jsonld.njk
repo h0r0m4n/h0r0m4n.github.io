@@ -1,0 +1,120 @@
+{%- set personSchema -%}
+{
+    "@type": "Person",
+    "@id": {{ (site.url + '/#person') | dump | safe }},
+    "name": {{ site.author | dump | safe }},
+    "alternateName": {{ site.nickname | dump | safe }},
+    "url": {{ site.url | dump | safe }},
+    "jobTitle": "Staff Product Designer",
+    "description": {{ site.description | dump | safe }},
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Analog Devices",
+        "url": "https://www.analog.com/"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dublin",
+        "addressCountry": "IE"
+    }{% if skills %},
+    "knowsAbout": [{% for group in skills %}{% set lastGroup = loop.last %}{% for item in group.body %}{{ item | dump | safe }}{% if not (loop.last and lastGroup) %}, {% endif %}{% endfor %}{% endfor %}]{% endif %}{% if social %},
+    "sameAs": [{% for item in social %}{{ item.link | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
+}
+{%- endset -%}
+
+{% if type == 'blog' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ (description or site.description) | dump | safe }},
+    "image": {{ (site.url + '/static/preview.jpg') | dump | safe }},
+    "inLanguage": "en",
+    "datePublished": {{ (date | isoDate) | dump | safe }},
+    "author": {
+        "@type": "Person",
+        "@id": {{ (site.url + '/#person') | dump | safe }},
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    },
+    "publisher": {
+        "@type": "Person",
+        "@id": {{ (site.url + '/#person') | dump | safe }},
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    },
+    {% if category %}"articleSection": {{ category | dump | safe }},{% endif %}
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ (site.url + page.url) | dump | safe }}
+    }
+}
+</script>
+{% elif page.url == '/' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {{ personSchema | safe }},
+        {
+            "@type": "WebSite",
+            "@id": {{ (site.url + '/#website') | dump | safe }},
+            "name": {{ site.title | dump | safe }},
+            "url": {{ site.url | dump | safe }},
+            "description": {{ site.description | dump | safe }},
+            "inLanguage": "en",
+            "author": {
+                "@id": {{ (site.url + '/#person') | dump | safe }}
+            }
+        }
+    ]
+}
+</script>
+{% elif page.url == '/about/' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": {{ (title + ' — ' + site.title) | dump | safe }},
+    "url": {{ (site.url + page.url) | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "inLanguage": "en",
+    "mainEntity": {{ personSchema | safe }}
+}
+</script>
+{% elif page.url == '/blog/' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": {{ (site.title + ' — Blog') | dump | safe }},
+    "url": {{ (site.url + page.url) | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "inLanguage": "en",
+    "author": {
+        "@type": "Person",
+        "@id": {{ (site.url + '/#person') | dump | safe }},
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    }
+}
+</script>
+{% elif page.url == '/projects/' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ (title + ' — ' + site.title) | dump | safe }},
+    "url": {{ (site.url + page.url) | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "inLanguage": "en",
+    "author": {
+        "@type": "Person",
+        "@id": {{ (site.url + '/#person') | dump | safe }},
+        "name": {{ site.author | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+    }
+}
+</script>
+{% endif %}
