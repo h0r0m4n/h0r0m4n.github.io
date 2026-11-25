@@ -40,5 +40,12 @@ The `eleventy.config.js` config provides several custom shortcodes heavily used 
 - **Utility**: `{% stats %}` (for rendering project metadata blocks), `{% year %}` (current year), `{% experienceYears %}` (calculates years of experience from a start date).
 
 ## Key Collections & Filters
-- **Collections**: `work` (aggregates all case studies in `src/work/**/*.md` and reverses them chronologically).
-- **Filters**: `head` (limits array size), `permalinkNotFalse` (filters out drafts/hidden pages), `base64`, `year`.
+- **Collections**: `work` (aggregates all case studies in `src/work/**/*.md` and reverses them chronologically), `blog` (published articles in `src/blog/**/*.md`, sorted newest-first).
+- **Filters**: `head` (limits array size), `permalinkNotFalse` (filters out drafts/hidden pages), `base64`, `year`, `readableDate`, `isoDate`, `rssDate`.
+
+## Automatic Site Versioning (`src/_data/site.js`)
+The `version` field in `src/_data/site.js` uses a `MAJOR.MINOR` format (e.g., `'12.2'`) for cache-busting and `/about/`. Automatically bump it once per logical user-facing change (not on every tiny iterative tweak):
+- **Major (`X+1.0`)**: Redesigns, new core sections, or major structural/routing overhauls.
+- **Minor (`X.Y+1`)**: New features, new blog posts or case studies, meaningful CSS/JS/SEO updates, or data/content updates.
+- **No bump**: Pure typo fixes, docs/AI-config-only updates, or internal chores with no user-facing impact.
+

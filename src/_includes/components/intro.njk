@@ -10,24 +10,21 @@
         {% endif %}
         {% if page.url == '/' %}
             <h1 class="intro__logo">
-                <a href="/">
+                <a href="/" rel="home">
                     <span class="t__vh">{{ site.author }}</span>
                     {% include 'assets/logo.svg' %}
                 </a>
             </h1>
         {% else %}
             <div class="intro__logo">
-                <a href="/">
-                    <span class="t__vh">{{ site.author }}</span>
+                <a href="/" rel="home">
+                    <span class="t__vh">{{ site.author }} — Home</span>
                     {% include 'assets/logo.svg' %}
                 </a>
             </div>
         {% endif %}
         <nav class="intro__nav">
             <ul>
-                <li>
-                    <a href="/" class="intro__nav-link {% if page.url == '/' %}intro__nav-link--active{% endif %}">Home</a>
-                </li>
                 <li>
                     <a href="/case-studies/" data-protected="true" rel="nofollow" class="intro__nav-link {% if page.url == '/case-studies/' or type == 'work' %}intro__nav-link--active{% endif %}">Case studies</a>
                     <span>&</span>
