@@ -5,7 +5,7 @@ category: Development
 date: 2013-12-28
 ---
 
-A few weeks ago [I wrote about rapid prototyping in HTML](/blog/rapid-prototyping-in-html-and-why-static-mockups-fall-short/) and why building directly in the browser beats pushing static mockups around. Once you actually work that way every day though, you hit a second bottleneck pretty quickly: plain HTML and CSS are verbose and repetitive.
+Building prototypes directly in the browser is great, as [I wrote when talking about rapid HTML prototyping](/blog/rapid-prototyping-in-html-and-why-static-mockups-fall-short/), but once you work that way every day you hit a second bottleneck pretty quickly: plain HTML and CSS are verbose and repetitive.
 
 Even with [Sublime Text 2](/blog/switching-from-coda-to-sublime-text-2/) and [Emmet](https://emmet.io/) speeding up my typing, maintaining a ten-page HTML prototype by hand gets messy fast. If you want to change one link in the navigation bar, you have to edit ten files. If you want to test a list of six cards with slightly different titles, you copy and paste the same `<div>` structure six times. And in plain CSS you keep repeating the same hex colors, font stacks and vendor prefixes over and over.
 
@@ -59,7 +59,7 @@ section.projects
     +projectCard(project)
 ```
 
-For rapid prototyping this is a game changer. If I want to change `.project-card` from a `<div>` to an `<article>` or add a category badge to every card, I change it in one mixin and every card updates immediately.
+For rapid prototyping this saves a ton of time. If I want to change `.project-card` from a `<div>` to an `<article>` or add a category badge to every card, I change it in one mixin and every card updates immediately.
 
 Even better is template inheritance with `extends`, `block` and `include`. I can define a single `_layout.jade` file with my `<head>`, header and footer, and every prototype page only writes its own content block:
 

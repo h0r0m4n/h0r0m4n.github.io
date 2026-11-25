@@ -13,13 +13,13 @@ For a while I tried configuring Mac OS X's built-in Apache and MySQL by hand, an
 
 The free version of [MAMP](https://www.mamp.info/) is totally fine when you only have one project running at `http://localhost:8888`. The problem starts the moment you are maintaining five or six different client WordPress sites at the same time.
 
-Upgrading to MAMP PRO 2 (which came out this summer with proper Mac OS X Lion support) solved every headache I had with local PHP environments. The killer feature for me is dead-simple virtual host management. Instead of editing `/etc/hosts` and Apache's `httpd-vhosts.conf` by hand every time a new project starts, you just open MAMP PRO, add a host like `client-project.local`, point it to your project folder, and click apply.
+Upgrading to MAMP PRO 2 (which came out this summer with proper Mac OS X Lion support) solved every headache I had with local PHP environments. The main reason I paid for it is virtual host management. Instead of editing `/etc/hosts` and Apache's `httpd-vhosts.conf` by hand every time a new project starts, you just open MAMP PRO, add a host like `client-project.local`, point it to your project folder, and click apply.
 
 In daily WordPress work, a few small details make a huge difference:
 
 - Every local WordPress install runs at the root of its own domain (`http://client-project.local/`), so root-relative URLs and `.htaccess` pretty permalinks behave exactly like they will on the live server.
 - You can switch between PHP 5.2 and PHP 5.3 with a single click, which is a lifesaver when a client's old shared hosting server is still stuck on an older PHP version.
-- Managing local MySQL databases is effortless with the built-in [phpMyAdmin](https://www.phpmyadmin.net/) or by connecting straight into MAMP's MySQL socket from [Sequel Pro](https://www.sequelpro.com/).
+- Managing local MySQL databases is simple with the built-in [phpMyAdmin](https://www.phpmyadmin.net/) or by connecting straight into MAMP's MySQL socket from [Sequel Pro](https://www.sequelpro.com/).
 
 Once MAMP PRO is running in the background, spinning up a fresh local WordPress site takes maybe two minutes.
 
@@ -27,7 +27,7 @@ Once MAMP PRO is running in the background, spinning up a fresh local WordPress 
 
 If MAMP PRO handles the back-end stack, [CodeKit](https://incident57.com/codekit/) by Bryan Jones is what takes care of the front-end. I was already a fan of his earlier [LESS.app](https://incident57.com/less/), and when the first CodeKit beta dropped last month I installed it immediately.
 
-The idea is simple: you drag your project folder into CodeKit, and it watches your files quietly in the background without forcing you to keep three terminal tabs open all day.
+The idea is simple: you drag your project folder into CodeKit, and it watches your files in the background without forcing you to keep three terminal tabs open all day.
 
 Every time you save a file in your editor, CodeKit automatically handles all the boring front-end tasks:
 
@@ -42,4 +42,4 @@ Using both apps side by side is where the workflow really shines for WordPress t
 
 MAMP PRO serves the local WordPress site at `http://client-project.local/`, while CodeKit watches my theme directory inside `wp-content/themes/client-theme/`. I open the local site on one side of my monitor and my code editor on the other. When I tweak a Sass variable or adjust a layout rule and hit `Cmd+S`, CodeKit compiles the CSS and injects it live into Chrome in less than a second.
 
-No waiting for FTP uploads, no clearing browser cache ten times in a row, and no manual terminal commands to remember. For anyone building WordPress sites on a Mac, MAMP PRO and CodeKit together are honestly the best productivity upgrade you can get right now.
+No more waiting on FTP uploads or babysitting terminal windows. If you build WordPress sites on a Mac, MAMP PRO and CodeKit together save hours every week.

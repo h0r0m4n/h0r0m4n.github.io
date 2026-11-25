@@ -13,7 +13,7 @@ That is why more and more of my early design work has moved straight into rapid 
 
 ## From static pages to reusable building blocks
 
-This way of working did not come out of nowhere. Over the last few years, the front-end community quietly changed how we think about interfaces, moving away from styling individual pages one by one and toward building systems of reusable blocks.
+This way of working did not come out of nowhere. Over the last few years, the front-end community completely changed how we think about interfaces, moving away from styling individual pages one by one and toward building systems of reusable blocks.
 
 Back in 2009, Nicole Sullivan introduced the idea of [OOCSS (Object-Oriented CSS)](https://github.com/stubbornella/oocss). For the first time, people stopped thinking in terms of whole pages and started looking at repeating visual patterns as independent objects that could be reused anywhere, regardless of context. When she wrote about the [Media Object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) pattern a year later, it clicked for a lot of us: an image next to a block of text is the same structural block whether it lives in a comment thread, a sidebar or a news feed.
 
@@ -55,7 +55,7 @@ Try doing that manually in [Sketch](https://www.sketch.com/) across three breakp
 
 ## Where Balsamiq, InVision and Marvel fall short
 
-I know a lot of designers rely on wireframing and click-through tools, and I have used plenty of them myself. [Balsamiq Mockups](https://balsamiq.com/) is fine if you just want to sketch a rough layout in a meeting and throw it away an hour later, though honestly a marker and a whiteboard are usually faster.
+I know a lot of designers rely on wireframing and click-through tools, and I have used plenty of them myself. [Balsamiq Mockups](https://balsamiq.com/) is fine if you just want to sketch a rough layout in a meeting and throw it away an hour later, though a marker and a whiteboard are usually faster.
 
 Tools like [InVision](https://www.invisionapp.com/), or the new [Marvel App](https://marvelapp.com/) that lets you link screens directly from Dropbox, are definitely better than emailing a folder of numbered PNGs to a client. You can draw hotspots over static mockups and click from screen A to screen B.
 
@@ -81,4 +81,4 @@ I am not saying every designer needs to become a full-time software engineer or 
 
 What you do need is enough comfort with HTML semantics, CSS layout, and a bit of basic JavaScript or [jQuery](https://jquery.com/) to connect states, toggle classes and use component libraries like Bootstrap or Foundation without fear.
 
-Once you understand the material you are actually designing for, everything changes. You stop handing developers impossible layouts that fall apart as soon as real data hits the page. You prototype faster than anyone drawing static screens by hand. And most importantly, you spend less time polishing fake pictures and more time testing real interfaces with real people.
+Once you understand the material you are actually designing for, everything changes. You stop handing developers impossible layouts that fall apart as soon as real data hits the page. You prototype much faster than drawing static screens by hand, and you spend your time testing real interfaces with real people instead of polishing fake pictures.

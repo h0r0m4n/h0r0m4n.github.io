@@ -27,7 +27,7 @@ It sounds like a small trick until you try to edit code in another editor withou
 
 ## Package Control and my favorite plugins
 
-Out of the box, Sublime Text 2 is intentionally minimal, which is why it stays so fast. The real magic starts the moment you install [Package Control](https://wbond.net/sublime_packages/package_control) by Will Bond. Instead of manually downloading plugin folders from GitHub, Package Control lets you search, install and keep plugins updated right from the Command Palette.
+Out of the box, Sublime Text 2 is intentionally minimal, which is why it stays so fast. What really makes it work for daily projects is installing [Package Control](https://wbond.net/sublime_packages/package_control) by Will Bond. Instead of manually downloading plugin folders from GitHub, Package Control lets you search, install and keep plugins updated right from the Command Palette.
 
 I try not to overload my setup with fifty extensions, so these are the few plugins I install first on any machine.
 
@@ -35,7 +35,7 @@ I try not to overload my setup with fifty extensions, so these are the few plugi
 
 One of the few rough edges in default Sublime Text 2 is the sidebar. Out of the box you only get very basic actions like New File, Rename and Delete, which felt like a big downgrade coming from Coda.
 
-[SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements) fixes that completely. It adds all the everyday file operations you expect: Duplicate, Move, Copy Path, Open in Browser, Reveal in Finder and Move to Trash. Honestly it feels like something that should be built into the editor by default.
+[SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements) fixes that completely. It adds all the everyday file operations you expect: Duplicate, Move, Copy Path, Open in Browser, Reveal in Finder and Move to Trash. It really feels like something that should be built into the editor out of the box.
 
 ### Emmet (formerly Zen Coding)
 
@@ -60,7 +60,7 @@ And Emmet instantly expands it into clean markup:
 </nav>
 ```
 
-It works for CSS properties too (`m10-20` becomes `margin: 10px 20px;`, `fz14` becomes `font-size: 14px;`), and when you combine Emmet with Sublime's multiple cursors, writing front-end code feels effortless.
+It works for CSS properties too (`m10-20` becomes `margin: 10px 20px;`, `fz14` becomes `font-size: 14px;`), and when you combine Emmet with Sublime's multiple cursors, writing front-end code gets ridiculously fast.
 
 ### A couple of small extras
 

@@ -21,9 +21,9 @@ So if a project needed structured data like a client name, a release date, a pro
 
 For one simple field it was annoying. For a full client website with twenty different fields across five templates, it meant repeating hundreds of lines of boilerplate code over and over, and most of the time the admin screen still ended up looking messy.
 
-## How Advanced Custom Fields changed the game
+## Why Advanced Custom Fields made such a difference
 
-Earlier this year I discovered [Advanced Custom Fields](https://www.advancedcustomfields.com/) (ACF), a plugin created by [Elliot Condon](https://www.elliotcondon.com/), and it honestly changed the rules of the game for me.
+Earlier this year I discovered [Advanced Custom Fields](https://www.advancedcustomfields.com/) (ACF), a plugin created by [Elliot Condon](https://www.elliotcondon.com/), and it immediately solved almost every problem I had with metaboxes.
 
 Instead of spending hours writing metabox PHP by hand, ACF gives you a really clean and intuitive graphical interface right inside WordPress. You build a field group, pick your field types, set up the location rules to decide where those fields appear (for example only on a "Projects" Custom Post Type, or only on the Homepage template), and you are ready to go.
 

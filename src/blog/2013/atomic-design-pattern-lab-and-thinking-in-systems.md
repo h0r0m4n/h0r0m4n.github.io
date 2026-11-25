@@ -5,7 +5,7 @@ category: Design
 date: 2013-12-16
 ---
 
-Last month [I wrote about rapid prototyping in HTML](/blog/rapid-prototyping-in-html-and-why-static-mockups-fall-short/) and how ideas like OOCSS, SMACSS, Bootstrap and Foundation pushed us to stop thinking in isolated pages. Since then, one specific methodology has been stuck in my head because it takes that exact mindset and gives it a clear, practical structure: [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/), introduced by [Brad Frost](https://bradfrost.com/) back in June.
+Since [Brad Frost](https://bradfrost.com/) published his post on [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) back in June, the idea has been stuck in my head. It takes the exact modular mindset from OOCSS, SMACSS, Bootstrap and [rapid HTML prototyping](/blog/rapid-prototyping-in-html-and-why-static-mockups-fall-short/) and gives it a clear, practical structure.
 
 The more I work on larger web applications, the more convinced I am that this systemic way of thinking is not just a trendy design metaphor. For medium and large companies, it is really the only sustainable way forward.
 
@@ -41,7 +41,7 @@ A shared atomic pattern library solves this at the root. Both designers and deve
 
 ## Better QA, easier maintenance and fewer bugs
 
-This systemic mindset pays off massively once the product is actually in production and needs to be maintained over years.
+This systemic mindset really pays off once the product is in production and needs to be maintained over years.
 
 Think about QA testing. If your site has ten custom-coded forms scattered across ten different templates, your QA team has to test every single one of them across browsers and devices every time something changes, and fixing a bug in one place leaves the other nine broken.
 
@@ -53,4 +53,4 @@ The same applies to complexity. Whether you are designing a simple notification 
 
 Small agencies and solo freelancers can get away with crafting custom one-off pages for a while, though even on smaller projects thinking in patterns saves a ton of time.
 
-For medium and large companies building real digital products that have to grow, evolve and stay consistent across multiple teams, I honestly believe an atomic, systemic approach is the only solution that works in the long run. Designing pages one by one simply does not scale anymore. Designing systems of reusable parts does.
+For medium and large companies building real digital products that have to grow, evolve and stay consistent across multiple teams, I really believe an atomic, systemic approach is the only solution that holds up over time. Designing pages one by one simply does not scale anymore. Designing systems of reusable parts does.
