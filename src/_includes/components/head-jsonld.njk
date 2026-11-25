@@ -16,7 +16,13 @@
         "@type": "PostalAddress",
         "addressLocality": "Dublin",
         "addressCountry": "IE"
-    }{% if skills %},
+    }{% if experience and experience.education %},
+    "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": {{ experience.education.school | dump | safe }},
+        "url": {{ experience.education.url | dump | safe }}
+    }{% endif %}{% if experience and experience.languages %},
+    "knowsLanguage": [{% for lang in experience.languages %}{{ lang.name | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}{% if skills %},
     "knowsAbout": [{% for group in skills %}{% set lastGroup = loop.last %}{% for item in group.body %}{{ item | dump | safe }}{% if not (loop.last and lastGroup) %}, {% endif %}{% endfor %}{% endfor %}]{% endif %}{% if social %},
     "sameAs": [{% for item in social %}{{ item.link | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
 }

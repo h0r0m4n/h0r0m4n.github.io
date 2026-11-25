@@ -1,7 +1,7 @@
 ---
 layout: layouts/base
 title: About
-description: About Roman Horokhovatskyy, Staff Product Designer — skills, design process, favorite readings, software, and hardware setup.
+description: About Roman Horokhovatskyy, Staff Product Designer — experience, education, skills, favorite readings, software, and hardware setup.
 permalink: "/{{ page.fileSlug }}/index.html"
 css:
   primary: '#fff'
@@ -25,6 +25,62 @@ css:
             <p>My work spans from UI design to frontend development, allowing me to prototype and implement the solutions I design. I enjoy working across the entire product lifecycle to deliver solid user experiences.</p>
             <p>I work closely with product teams to align business goals with user needs. I value research and collaborate actively with researchers and engineers to make informed design decisions.</p>
             <p>Accessibility is a core part of my process. I focus on creating inclusive designs that are intuitive and work well for everyone.</p>
+            {% if experience %}
+                <h3 class="t__typedivider">Experience</h3>
+                <div class="about__experience">
+                    <ol class="about__experience__list">
+                        {% for item in experience.roles %}
+                            <li class="about__experience__item">
+                                <span class="about__experience__period">{{ item.period }}</span>
+                                <div class="about__experience__body">
+                                    <h4 class="h6 about__experience__role">
+                                        {{ item.role }}
+                                        <span class="about__experience__at">at</span>
+                                        {% if item.url %}
+                                            <a href="{{ item.url }}" rel="noopener noreferrer nofollow" target="_blank">{{ item.company }}</a>
+                                        {% else %}
+                                            {{ item.company }}
+                                        {% endif %}
+                                    </h4>
+                                    <p class="about__experience__summary">{{ item.summary }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    {% if experience.earlier and experience.earlier.length %}
+                        <div class="about__experience__earlier">
+                            <h4>More experience</h4>
+                            <ol class="about__experience__earlier-list">
+                                {% for item in experience.earlier %}
+                                    <li class="about__experience__earlier-item">
+                                        <span class="about__experience__earlier-role">
+                                            <strong>{{ item.role }}</strong>{% if item.company %} <span class="about__experience__at">at</span> <strong>{{ item.company }}</strong>{% endif %}
+                                        </span>
+                                        <span class="about__experience__earlier-leader" aria-hidden="true"></span>
+                                        <span class="about__experience__earlier-period">{{ item.period }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    {% endif %}
+                    {% if experience.education %}
+                        <div class="about__experience__education">
+                            <h4>Education</h4>
+                            <div class="about__experience__item">
+                                <span class="about__experience__period">{{ experience.education.period }}</span>
+                                <div class="about__experience__body">
+                                    <h5 class="h6 about__experience__role">
+                                        {{ experience.education.degree }}
+                                        <span class="about__experience__at">at</span>
+                                        <a href="{{ experience.education.url }}" rel="noopener noreferrer nofollow" target="_blank">{{ experience.education.school }}</a>
+                                    </h5>
+                                    <p class="about__experience__summary">{{ experience.education.note }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
             {% if skills %}
                 <h3 class="t__typedivider">My skills</h3>
                 <div class="about__skills">    

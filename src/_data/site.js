@@ -15,7 +15,7 @@ export default {
     // Convenience: starting year derived from `startingDate`
     startingYear,
     password: 376301,
-    version: '12.8',
+    version: '12.9',
     environment: process.env.ELEVENTY_ENV,
     url: process.env.ELEVENTY_ENV === 'development' ? 'http://localhost:8080' : 'https://horoman.com'
 };

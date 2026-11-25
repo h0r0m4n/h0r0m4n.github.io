@@ -1,0 +1,84 @@
+{
+  "roles": [
+    {
+      "company": "Analog Devices",
+      "url": "https://www.analog.com/",
+      "role": "Staff Product Designer",
+      "period": "2024 – Present",
+      "summary": "Designing unified developer platforms and embedded software tools for heterogeneous architectures—spanning multi-core debugging, Zephyr integration, Edge AI workflows, and AI-assisted bidirectional Figma-to-code prototyping focused on accelerating Time-to-First-Build."
+    },
+    {
+      "company": "ESW",
+      "url": "https://esw.com/",
+      "role": "Senior Product Designer III",
+      "period": "2022 – 2024",
+      "summary": "Drove the creation, governance, documentation, and organization-wide adoption of the SPOT Design System across product teams and platform UI engineering."
+    },
+    {
+      "company": "MyWallSt",
+      "url": "https://mywallst.com/",
+      "role": "Lead Product Designer",
+      "period": "2021 – 2022",
+      "summary": "Led UX, visual direction, user research, and design sprints while building a cross-platform design system for Web, iOS, and Android apps."
+    },
+    {
+      "company": "Hertz",
+      "url": "https://www.hertz.com/",
+      "role": "Senior Product Designer",
+      "period": "2021",
+      "summary": "Spearheaded the foundation, UX audits, and documentation of the Ignition multi-brand design system across Hertz, Dollar, and Thrifty booking experiences."
+    },
+    {
+      "company": "Spindox",
+      "url": "https://www.spindox.it/",
+      "role": "Senior Product Designer II & III",
+      "period": "2018 – 2021",
+      "summary": "Designed enterprise digital products, accessible Figma design systems, and high-fidelity HTML/CSS/JS prototypes for major clients including Ferrari, Enel, SIAE, FCA Bank, UBI Banca, and Valentino."
+    }
+  ],
+  "earlier": [
+    {
+      "company": "Blasting News",
+      "role": "Product Designer",
+      "period": "2017 – 2018",
+      "summary": "Designed core publishing and analytics products (BlastingX, BlastingCut) serving over 100M monthly active users."
+    },
+    {
+      "company": "Land Ho",
+      "role": "Product Designer",
+      "period": "2016 – 2017",
+      "summary": "Designed digital products for clients including Adele Altman and Keyline."
+    },
+    {
+      "company": "Le Paradox",
+      "role": "Product Designer",
+      "period": "2012 – 2014",
+      "summary": "Led the rebranding and established the style guide for a publication with 150K+ monthly readers."
+    },
+    {
+      "company": "",
+      "role": "Freelance Designer",
+      "period": "2010 – 2014",
+      "summary": "Designed digital projects for clients including TIM and RAI."
+    },
+    {
+      "company": "BioMedia Comunicazione",
+      "role": "Web Designer",
+      "period": "2008 – 2010",
+      "summary": "Progressed from Junior Web Designer to Web Designer building web interfaces and sites."
+    }
+  ],
+  "education": {
+    "school": "IED",
+    "url": "https://www.ied.edu/",
+    "degree": "Bachelor of Arts in Media Design",
+    "period": "2013 – 2016",
+    "note": "Focused on UX, Visual Design, and Interaction Design; honours thesis on Interaction Design for the Web Virtual Reality."
+  },
+  "languages": [
+    { "name": "Ukrainian", "level": "Native" },
+    { "name": "Italian", "level": "Full Professional" },
+    { "name": "English", "level": "Professional Working" },
+    { "name": "Russian", "level": "Professional Working" }
+  ]
+}

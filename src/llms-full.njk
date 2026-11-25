@@ -21,6 +21,24 @@ I am a Staff Product Designer at Analog Devices, working on digital tools for ha
 
 I combine my background in design and technology to create interfaces that are both functional and visually appealing. My work spans from UI design to frontend development, allowing me to prototype and implement the solutions I design across the entire product lifecycle. Accessibility is a core part of my process.
 
+### Experience
+{% for item in experience.roles %}
+- **{{ item.role | safe }}** at {{ item.company | safe }} ({{ item.period | safe }}): {{ item.summary | safe }}
+{%- endfor %}
+
+#### Earlier Experience
+{% for item in experience.earlier %}
+- **{{ item.role | safe }}**{% if item.company %} at {{ item.company | safe }}{% endif %} ({{ item.period | safe }}): {{ item.summary | safe }}
+{%- endfor %}
+
+### Education
+
+- **{{ experience.education.degree | safe }}**, {{ experience.education.school | safe }} ({{ experience.education.period | safe }}) — {{ experience.education.note | safe }}
+
+### Languages
+
+- {% for lang in experience.languages %}{{ lang.name | safe }} ({{ lang.level | safe }}){% if not loop.last %}, {% endif %}{% endfor %}
+
 ### Skills
 {% for group in skills %}
 - **{{ group.title | safe }}**: {{ group.body | join(', ') | safe }}

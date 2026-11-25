@@ -2,6 +2,116 @@
 @use "../vars"
 
 .about
+    &__experience
+        margin-top: var(--size-l)
+
+        &__list
+            list-style: none
+            padding: 0
+            margin: 0
+            &--compact
+                margin-top: var(--size-m)
+
+        &__item
+            padding: 0
+            & + &
+                margin-top: var(--size-l)
+
+        &__period
+            display: block
+            font-family: var(--type-family-1a)
+            font-size: 0.7em
+            font-variant-numeric: tabular-nums
+            letter-spacing: 0.08em
+            text-transform: uppercase
+            color: rgba(255, 255, 255, 0.65)
+            margin-bottom: var(--size-xs)
+
+        &__role
+            line-height: 1.25
+            color: var(--color-primary)
+            margin: 0 0 var(--size-xs)
+            a
+                color: var(--color-secondary)
+                text-decoration: none
+                border-bottom: 1px solid rgba(255, 222, 51, 0.35)
+                padding-bottom: 0.05em
+                transition: border-color 150ms ease, color 150ms ease
+                &:hover, &:focus-visible
+                    color: var(--color-primary)
+                    border-bottom-color: var(--color-secondary)
+
+        &__at
+            color: rgba(255, 255, 255, 0.65)
+            margin-inline: 0.15em
+
+        &__summary
+            margin: 0
+            font-size: 0.8em
+            line-height: 1.6
+            color: rgba(255, 255, 255, 0.84)
+
+        &__earlier
+            margin-top: var(--size-xl)
+            h4
+                margin: 0 0 var(--size-m)
+
+        &__earlier-list
+            list-style: none
+            padding: 0
+            margin: 0
+
+        &__earlier-item
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 0.1rem
+            font-size: 0.85em
+            line-height: 1.45
+            & + &
+                margin-top: var(--size-s)
+            @include mixins.mq-small
+                flex-direction: row
+                flex-wrap: nowrap
+                align-items: center
+                gap: var(--size-s)
+                line-height: 1.5
+                & + &
+                    margin-top: var(--size-xs)
+
+        &__earlier-role
+            color: var(--color-primary)
+            strong
+                color: var(--color-primary)
+
+        &__earlier-leader
+            display: none
+            @include mixins.mq-small
+                display: block
+                flex: 1 1 auto
+                min-width: var(--size-s)
+                border-bottom: 1px dotted var(--color-neutral-2)
+                transform: translateY(0.1em)
+
+        &__earlier-period
+            order: -1
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace
+            font-size: 0.75em
+            font-variant-numeric: tabular-nums
+            letter-spacing: 0.04em
+            color: rgba(255, 255, 255, 0.65)
+            white-space: nowrap
+            @include mixins.mq-small
+                order: 0
+                font-size: 0.8em
+                color: rgba(255, 255, 255, 0.7)
+                margin-left: auto
+
+        &__education
+            margin-top: var(--size-xl)
+            h4
+                margin: 0 0 var(--size-m)
+
     &__skills
         @include mixins.mq-small
             display: grid
