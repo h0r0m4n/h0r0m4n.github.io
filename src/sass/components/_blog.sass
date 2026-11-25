@@ -2,11 +2,46 @@
 @use "../vars"
 
 .blog
+    &__header
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        gap: var(--size-xs) var(--size-s)
+        margin-top: 1.5em
+
+        h2
+            margin-top: 0
+            flex: 1 1 auto
+            width: auto
+
+    &__more-link
+        flex-shrink: 0
+        font-size: 0.9em
+        color: var(--color-secondary)
+        text-decoration: underline
+        text-decoration-thickness: max(1px, .0625rem)
+        text-underline-offset: .1em
+        @media (prefers-color-scheme: light)
+            text-decoration-color: var(--color-tertiary)
+        &:focus-visible, &:hover
+            text-decoration-thickness: max(3px, .1875rem, .12em)
+            text-decoration-skip-ink: none
+            text-decoration-skip: none
+
     &__list
         margin-top: var(--size-l)
 
     &__card
         padding-top: 0
+        background-color: var(--color-background)
+        background-image: linear-gradient(135deg, var(--color-neutral-4) 0%, transparent 65%)
+        border: 1px solid var(--color-neutral-3)
+        box-shadow: var(--shadow-1)
+        transition: transform .3s cubic-bezier(0, 0, .5, 1), box-shadow 300ms ease
+
+        &:hover,
+        &:has(.t__card__link:focus-visible)
+            box-shadow: var(--shadow-2)
 
         &:has(.t__card__link:focus-visible)
             outline: 4px solid var(--color-secondary)
@@ -24,14 +59,89 @@
         .t__stats
             margin: var(--size-s) 0 0
 
-    &__more
-        margin-top: var(--size-l)
-        margin-bottom: 0
-        font-family: var(--type-family-1b)
-
     &__empty
         color: var(--color-neutral-1)
         margin-top: var(--size-l)
+
+#latest-posts
+    .blog__list
+        counter-reset: latest-post
+        gap: var(--size-s)
+        @include mixins.mq-small
+            gap: 0
+            padding-block: var(--size-s)
+
+    .t__grid__item
+        counter-increment: latest-post
+        position: relative
+
+        @include mixins.mq-small
+            &:nth-child(1)
+                z-index: 3
+                .blog__card
+                    transform: translate3d(-0.75rem, 0, 0) rotate(-0.8deg)
+
+            &:nth-child(2)
+                z-index: 2
+                margin-top: -0.5rem
+                .blog__card
+                    transform: translate3d(0.75rem, 0, 0) rotate(0.4deg)
+
+            &:nth-child(3)
+                z-index: 1
+                margin-top: -0.5rem
+                .blog__card
+                    transform: translate3d(-0.25rem, 0, 0) rotate(-0.4deg)
+
+            &:has(.blog__card:hover),
+            &:has(.t__card__link:focus-visible)
+                z-index: 10
+
+    .blog__card
+        overflow: hidden
+        transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, opacity 280ms ease, filter 280ms ease
+
+        &::after
+            content: "0" counter(latest-post)
+            position: absolute
+            right: var(--size-m)
+            bottom: -0.15em
+            font-family: var(--type-family-2)
+            font-size: 4.5em
+            line-height: 1
+            color: var(--color-neutral-4)
+            pointer-events: none
+            user-select: none
+            transition: color 300ms ease, transform 380ms cubic-bezier(0.22, 1, 0.36, 1)
+
+        .t__card__header
+            position: relative
+            z-index: 1
+
+        &:hover,
+        &:has(.t__card__link:focus-visible)
+            &::after
+                color: var(--color-neutral-3)
+                transform: translate3d(0, -4px, 0)
+
+        @include mixins.mq-small
+            &:hover,
+            &:has(.t__card__link:focus-visible)
+                transform: translate3d(0, -6px, 0) rotate(0deg) scale3d(1.025, 1.025, 1.025)
+
+    .blog__list:has(.blog__card:hover) .blog__card:not(:hover),
+    .blog__list:has(.t__card__link:focus-visible) .blog__card:not(:has(.t__card__link:focus-visible))
+        opacity: 0.65
+        filter: saturate(0.8)
+
+    @media (prefers-reduced-motion: reduce)
+        .blog__list
+            gap: var(--size-s)
+        .t__grid__item
+            margin-top: 0 !important
+            .blog__card
+                transform: none !important
+                transition: box-shadow 150ms ease, opacity 150ms ease
 
 .post
     &__heading

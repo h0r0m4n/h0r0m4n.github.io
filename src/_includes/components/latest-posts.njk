@@ -1,7 +1,10 @@
 {% if collections.blog and collections.blog.length %}
     <section id="latest-posts" class="blog t__section">
         <div class="t__container">
-            <h2 class="t__typedivider">Latest articles</h2>
+            <header class="blog__header">
+                <h2 class="t__typedivider">Latest articles</h2>
+                <a class="blog__more-link" href="/blog/">View all →</a>
+            </header>
             <ol class="t__grid t__grid--bits blog__list">
                 {% for post in collections.blog | head(3) %}
                     <li class="t__grid__item">
@@ -23,9 +26,6 @@
                     </li>
                 {% endfor %}
             </ol>
-            <p class="blog__more">
-                <a href="/blog/">View all articles →</a>
-            </p>
         </div>
     </section>
 {% endif %}
