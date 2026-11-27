@@ -24,22 +24,29 @@
     &__comment
         position: relative
         background-color: var(--color-tertiary)
+        background-image: linear-gradient(45deg, transparent 15%, rgba(0, 0, 0, 0.12) 100%)
         color: var(--color-background)
         border-radius: var(--radius-2)
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .12))
         padding: var(--size-m)
         z-index: 3
+        @media (prefers-color-scheme: dark)
+            background-image: linear-gradient(45deg, transparent 15%, rgba(255, 255, 255, 0.24) 100%)
         @media print
             color: var(--color-primary)
+            background-image: none
+            filter: none
         &::after
-            content: ' '
+            content: ''
             position: absolute
             width: 0
             height: 0
-            left: 0
+            left: var(--size-m)
             right: auto
-            top: auto
-            bottom: calc(var(--size-m) * -1)
-            border: var(--size-m) solid
+            top: 100%
+            bottom: auto
+            border-style: solid
+            border-width: 0 var(--size-m) var(--size-m) 0
             border-color: transparent var(--color-tertiary) transparent transparent
             @media print
                 display: none
